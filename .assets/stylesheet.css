@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   background: #151515 url("bkg.png") 0 0;
-  color: #eaeaea;
+  color: #eee;
   font: 16px;
   line-height: 1.5;
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
@@ -65,7 +65,18 @@ header h1:before {
 header h2 {
   font-size: 18px;
   font-weight: 300;
-  color: #666;
+  color: #999;
+}
+
+footer {
+  border-top: 1px dashed #b5e853;
+  color:#999;
+}
+footer .copyright {
+  float:left;
+}
+footer .download {
+  float:right;
 }
 
 #downloads .btn {
@@ -127,6 +138,12 @@ h1, h2, h3, h4, h5, h6 {
 dt {
   font-style: italic;
   font-weight: bold;
+}
+dt:before {
+  content:"$ ";
+}
+dd:before {
+  content:"> ";
 }
 
 ul li {
@@ -227,7 +244,7 @@ hr {
 */
 
 a {
-  color: #63c0f5;
+  color: #b5e853;
   text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
 }
 
