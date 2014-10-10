@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: #151515 url("../images/bkg.png") 0 0;
+  background: #151515 url("bkg.png") 0 0;
   color: #eaeaea;
   font: 16px;
   line-height: 1.5;
@@ -58,7 +58,7 @@ header h1 {
 }
 
 header h1:before {
-  content: "./ ";
+  content: "#! ";
   font-size: 24px;
 }
 
@@ -219,7 +219,7 @@ hr {
 
 .btn-github .icon {
   opacity: 0.6;
-  background: url("../images/blacktocat.png") 0 0 no-repeat;
+  background: url("blacktocat.png") 0 0 no-repeat;
 }
 
 /* Links
