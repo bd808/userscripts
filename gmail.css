@@ -1,0 +1,27 @@
+/*!
+ * bd808's gmail css hacks
+ * © 2014 Bryan Davis and contributors
+ * License: http://opensource.org/licenses/MIT
+ */
+
+/* Fixed width font for message bodies and composition */
+.gs .ii,
+textarea.Ak,
+div[aria-label="Message Body"] {
+  font-family:'Source Code Pro' monospace !important;
+  font-size:9pt !important;
+}
+
+/* g+ profile link */
+.gb_Ac {
+  display:none;
+}
+/* g+ share button */
+.gb_Jb {
+  display:none;
+}
+
+/* ad gutter */
+td.Bu.y3 {
+  display:none;
+}
