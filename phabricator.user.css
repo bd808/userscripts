@@ -1,0 +1,15 @@
+/*!
+ * bd808's phabricator css hacks
+ * © 2014 Bryan Davis and contributors
+ * License: http://opensource.org/licenses/MIT
+ */
+
+.phui-timeline-spacer {
+  display:none;
+}
+.phui-timeline-minor-event {
+  display:none;
+}
+.phui-timeline-shell {
+  margin-bottom:.5em;
+}
