@@ -17,8 +17,8 @@
 
 /* squish boards horizontally */
 .phui-workboard-view .aphront-multi-column-fixed .aphront-multi-column-column-outer {
-  width:200px !important;
+  width:220px !important;
 }
 .phui-workboard-view .aphront-multi-column-fixed .phui-workpanel-body {
-  width:200px !important;
+  width:220px !important;
 }
