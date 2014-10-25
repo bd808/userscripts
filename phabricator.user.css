@@ -4,11 +4,8 @@
  * License: http://opensource.org/licenses/MIT
  */
 
-/* hide minor events */
+/* squish timeline vertically */
 .phui-timeline-spacer {
-  display:none;
-}
-.phui-timeline-minor-event {
   display:none;
 }
 .phui-timeline-shell {
