@@ -4,7 +4,7 @@
 // @description  Make phabricator look and work like I want it to
 // @match        https://secure.phabricator.com/*
 // @match        https://phabricator.wikimedia.org/*
-// @version      0.3
+// @version      0.4
 // @author       Bryan Davis
 // @license      MiT License; http://opensource.org/licenses/MIT
 // @downloadURL  http://bd808.com/userscripts/phabricator.user.js
@@ -40,6 +40,9 @@ GM_addStyle(GM_getResourceText('css'));
              */
             var extra = kids[0].querySelector('.phui-timeline-extra');
             kids[firstVisible].appendChild(extra);
+        } else {
+            /* All items ended up hidden, so hide the whole minor event */
+            nodes[nodeIdx].style.display = 'none';
         }
     }
 })();
