@@ -4,7 +4,7 @@
 // @description  Make phabricator look and work like I want it to
 // @match        https://secure.phabricator.com/*
 // @match        https://phabricator.wikimedia.org/*
-// @version      0.5
+// @version      0.6
 // @author       Bryan Davis
 // @license      MiT License; http://opensource.org/licenses/MIT
 // @downloadURL  http://bd808.com/userscripts/phabricator.user.js
@@ -17,10 +17,10 @@
 /* Load custom css */
 GM_addStyle(GM_getResourceText('css'));
 
-/* Hide spammy minor events */
+/* Hide spammy events */
 (function() {
     "use strict";
-    var nodes = document.querySelectorAll('.phui-timeline-minor-event'),
+    var nodes = document.querySelectorAll('.phui-timeline-event-view'),
         nodesLen = nodes.length,
         spam = /created this task|(added|removed) (a )?(subscriber|project)|(changed|set) Security (from|to)|moved this task to|awarded a token|(raised|lowered) the priority of this task/;
     for (var nodeIdx = 0; nodeIdx < nodesLen; nodeIdx++) {
