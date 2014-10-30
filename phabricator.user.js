@@ -4,7 +4,7 @@
 // @description  Make phabricator look and work like I want it to
 // @match        https://secure.phabricator.com/*
 // @match        https://phabricator.wikimedia.org/*
-// @match        https://bugzillapreview.wikimedia.org/*
+// @match        https://bugzillapreview.wmflabs.org/*
 // @version      0.7
 // @author       Bryan Davis
 // @license      MiT License; http://opensource.org/licenses/MIT
