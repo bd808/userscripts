@@ -4,7 +4,8 @@
 // @description  Make phabricator look and work like I want it to
 // @match        https://secure.phabricator.com/*
 // @match        https://phabricator.wikimedia.org/*
-// @version      0.6
+// @match        https://bugzillapreview.wikimedia.org/*
+// @version      0.7
 // @author       Bryan Davis
 // @license      MiT License; http://opensource.org/licenses/MIT
 // @downloadURL  http://bd808.com/userscripts/phabricator.user.js
@@ -43,6 +44,21 @@ GM_addStyle(GM_getResourceText('css'));
         } else {
             /* All items ended up hidden, so hide the whole minor event */
             nodes[nodeIdx].style.display = 'none';
+        }
+    }
+})();
+
+/* link bugzilla references to original bug */
+(function() {
+    "use strict";
+    var nodes = document.querySelectorAll('.phui-property-list-value'),
+        nodesLen = nodes.length,
+        bzIdRegex = /\b(bz(\d+))\b/,
+        bzLink = '<a href="https://bugzillaphabricator.wikimedia.org?id=$2">$1</a>';
+    for (var nodeIdx = 0; nodeIdx < nodesLen; nodeIdx++) {
+        if (bzIdRegex.test(nodes[nodeIdx].innerHTML)) {
+            nodes[nodeIdx].innerHTML =
+                nodes[nodeIdx].innerHTML.replace( bzIdRegex, bzLink );
         }
     }
 })();
