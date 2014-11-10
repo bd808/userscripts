@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         gmail hacks
-// @namespace    http://bd808.com/userscripts
+// @namespace    http://bd808.com/userscripts/
 // @description  Make gmail look and work like I want it to
 // @match        https://mail.google.com/*
 // @version      0.2

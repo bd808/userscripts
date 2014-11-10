@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         etherpad personal settings
-// @namespace    http://bd808.com/userscripts
+// @namespace    http://bd808.com/userscripts/
 // @description  Don't use this unless you are bd808!
 // @match        http://etherpad.*/p/*
 // @match        https://etherpad.*/p/*
