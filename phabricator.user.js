@@ -5,7 +5,7 @@
 // @match        https://secure.phabricator.com/*
 // @match        https://phabricator.wikimedia.org/*
 // @match        https://bugzillapreview.wmflabs.org/*
-// @version      0.8
+// @version      0.9
 // @author       Bryan Davis
 // @license      MiT License; http://opensource.org/licenses/MIT
 // @downloadURL  http://bd808.com/userscripts/phabricator.user.js
@@ -23,7 +23,7 @@ GM_addStyle(GM_getResourceText('css'));
     "use strict";
     var nodes = document.querySelectorAll('.phui-timeline-minor-event'),
         nodesLen = nodes.length,
-        spam = /created this task|(added|removed) (a )?(subscriber|project)|(changed|set) Security (from|to)|moved this task to|awarded a token|(raised|lowered) the priority of this task|triaged this task as/;
+        spam = /created this task|(added|removed) (a )?(subscriber|project)|(changed|set) Security (from|to)|moved this task to|awarded a token|(raised|lowered) the priority of this task|triaged this task as|changed the title from/;
     for (var nodeIdx = 0; nodeIdx < nodesLen; nodeIdx++) {
         var kids = nodes[nodeIdx].querySelectorAll('.phui-timeline-title'),
             kidsLen = kids.length,
