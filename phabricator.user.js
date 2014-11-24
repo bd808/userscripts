@@ -5,7 +5,7 @@
 // @match        https://secure.phabricator.com/*
 // @match        https://phabricator.wikimedia.org/*
 // @match        https://bugzillapreview.wmflabs.org/*
-// @version      0.9
+// @version      0.10
 // @author       Bryan Davis
 // @license      MiT License; http://opensource.org/licenses/MIT
 // @downloadURL  http://bd808.com/userscripts/phabricator.user.js
@@ -54,7 +54,7 @@ GM_addStyle(GM_getResourceText('css'));
     var nodes = document.querySelectorAll('.phui-property-list-value'),
         nodesLen = nodes.length,
         bzIdRegex = /\b(bz(\d+))\b/,
-        bzLink = '<a href="https://bugzillaphabricator.wikimedia.org?id=$2">$1</a>';
+        bzLink = '<a href="https://bugzilla.wikimedia.org?id=$2">$1</a> <smaller>(<a href="https://old-bugzilla.wikimedia.org?id=$2" target="_blank">bz</a>)</smaller>';
     for (var nodeIdx = 0; nodeIdx < nodesLen; nodeIdx++) {
         if (bzIdRegex.test(nodes[nodeIdx].innerHTML)) {
             nodes[nodeIdx].innerHTML =
