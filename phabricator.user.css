@@ -19,3 +19,10 @@
 .phui-workboard-view .aphront-multi-column-fixed .phui-workpanel-body {
   width:220px !important;
 }
+
+/* custom ui */
+.phabricator-notification-header .phabricator-notification-unread {
+  color:#18559D;
+  float:right;
+  font-weight:normal;
+}

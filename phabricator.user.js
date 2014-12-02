@@ -5,7 +5,7 @@
 // @match        https://secure.phabricator.com/*
 // @match        https://phabricator.wikimedia.org/*
 // @match        https://bugzillapreview.wmflabs.org/*
-// @version      0.11
+// @version      0.12
 // @author       Bryan Davis
 // @license      MiT License; http://opensource.org/licenses/MIT
 // @downloadURL  http://bd808.com/userscripts/phabricator.user.js
@@ -48,7 +48,7 @@ GM_addStyle(GM_getResourceText('css'));
     }
 })();
 
-/* link bugzilla references to original bug */
+/* Link bugzilla references to original bug */
 (function() {
     "use strict";
     var nodes = document.querySelectorAll('.phui-property-list-value'),
@@ -60,6 +60,16 @@ GM_addStyle(GM_getResourceText('css'));
             nodes[nodeIdx].innerHTML =
                 nodes[nodeIdx].innerHTML.replace( bzIdRegex, bzLink );
         }
+    }
+})();
+
+/* Add a shortcut to unread notifications */
+(function() {
+    "use strict";
+    var nodes = document.querySelectorAll('.phabricator-notification-header');
+    if ( nodes.length > 0 ) {
+        nodes[0].innerHTML = nodes[0].innerHTML +
+            '<a href="/notification/query/unread/" class="phabricator-notification-unread">Unread</a>';
     }
 })();
 
