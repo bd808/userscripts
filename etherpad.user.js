@@ -2,9 +2,8 @@
 // @name         etherpad personal settings
 // @namespace    http://bd808.com/userscripts/
 // @description  Don't use this unless you are bd808!
-// @match        http://etherpad.*/p/*
-// @match        https://etherpad.*/p/*
-// @version      0.3
+// @match        *://etherpad.wikimedia.org/p/*
+// @version      0.4
 // @author       Bryan Davis
 // @license      MIT License; http://opensource.org/licenses/MIT
 // @downloadURL  http://bd808.com/userscripts/etherpad.user.js
