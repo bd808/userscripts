@@ -8,8 +8,8 @@
 // @version      0.13
 // @author       Bryan Davis
 // @license      MiT License; http://opensource.org/licenses/MIT
-// @downloadURL  http://bd808.com/userscripts/phabricator.user.js
-// @updateURL    http://bd808.com/userscripts/phabricator.user.js
+// @downloadURL  https://bd808.github.io/userscripts/phabricator.user.js
+// @updateURL    https://bd808.github.io/userscripts/phabricator.user.js
 // @grant        GM_addStyle
 // @grant        GM_getResourceText
 // @resource     css http://bd808.com/userscripts/phabricator.user.css

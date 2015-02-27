@@ -6,8 +6,8 @@
 // @version      0.4
 // @author       Bryan Davis
 // @license      MIT License; http://opensource.org/licenses/MIT
-// @downloadURL  http://bd808.com/userscripts/etherpad.user.js
-// @updateURL    http://bd808.com/userscripts/etherpad.user.js
+// @downloadURL  https://bd808.github.io/userscripts/etherpad.user.js
+// @updateURL    https://bd808.github.io/userscripts/etherpad.user.js
 // @grant none
 // @run-at document-end
 // ==/UserScript==
