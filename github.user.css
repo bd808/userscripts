@@ -1,0 +1,15 @@
+/*!
+ * bd808's github css hacks
+ * © 2015 Bryan Davis and contributors
+ * License: http://opensource.org/licenses/MIT
+ */
+
+/* wide wiki */
+#wiki-rightbar {
+  float: none;
+  width: 100%;
+}
+.has-rightbar #wiki-body,
+.has-rightbar #wiki-footer {
+  margin-right: 20px;
+}
