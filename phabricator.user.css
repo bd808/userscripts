@@ -13,10 +13,10 @@
 }
 
 /* squish boards horizontally */
-.phui-workboard-view .aphront-multi-column-fixed .aphront-multi-column-column-outer {
-  width:220px !important;
-}
-.phui-workboard-view .aphront-multi-column-fixed .phui-workpanel-body {
+.phui-workboard-view .aphront-multi-column-fixed .aphront-multi-column-column-outer,
+.phui-workboard-view .aphront-multi-column-fixed .phui-workpanel-body,
+.aphront-multi-column-fixed .phui-workpanel-view,
+.phui-workpanel-view .phui-header-shell {
   width:220px !important;
 }
 
