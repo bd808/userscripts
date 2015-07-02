@@ -1,0 +1,15 @@
+/*!
+ * bd808's WMF gerrit css hacks
+ * © 2014 Bryan Davis and contributors
+ * License: http://opensource.org/licenses/MIT
+ */
+
+#gerrit_topmenu {
+    position:inherit !important;
+}
+#gerrit_header {
+    display:none !important;
+}
+.searchPanel .gwt-TextBox {
+    width:25em;
+}
