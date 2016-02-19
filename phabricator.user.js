@@ -5,7 +5,7 @@
 // @match        https://secure.phabricator.com/*
 // @match        https://phabricator.wikimedia.org/*
 // @match        https://bugzillapreview.wmflabs.org/*
-// @version      0.14
+// @version      0.15
 // @author       Bryan Davis
 // @license      MiT License; http://opensource.org/licenses/MIT
 // @downloadURL  https://bd808.github.io/userscripts/phabricator.user.js
@@ -60,6 +60,16 @@ GM_addStyle(GM_getResourceText('css'));
             nodes[nodeIdx].innerHTML =
                 nodes[nodeIdx].innerHTML.replace( bzIdRegex, bzLink );
         }
+    }
+})();
+
+/* Hide tags for archived projects */
+(function() {
+    "use strict";
+    var disabled = document.querySelectorAll('li a.phui-tag-shade-disabled'),
+        disabledLen = disabled.length;
+    for (var disabledIdx = 0; disabledIdx < disabledLen; disabledIdx++) {
+        disabled[disabledIdx].parentNode.style.display = 'none';
     }
 })();
 

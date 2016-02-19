@@ -19,6 +19,35 @@
 .phui-workpanel-view .phui-header-shell {
   width:220px !important;
 }
+.phui-header-action-list li {
+  margin:0 8px !important;
+}
+
+/* tiny tags */
+.phabricator-handle-tag-list .phui-tag-shade-slim .phui-tag.core {
+  font-size:8px !important;
+}
+.phabricator-handle-tag-list .phabricator-handle-tag-list-item {
+  line-height:normal !important;
+  margin:0 2px 0 0 !important;
+  overflow-x:hidden !important;
+  width:32px !important;
+}
+.phabricator-handle-tag-list .phabricator-handle-tag-list-item:hover {
+  width:auto;
+}
+
+/* kill per-column scroll */
+.device-desktop .phui-workboard-view-shadow {
+  overflow:auto !important;
+}
+.device-desktop .phui-workpanel-body-content {
+  max-height:none !important;
+  overflow:visible !important;
+}
+.device-desktop .phui-header-shell {
+  overflow:visible !important;
+}
 
 /* custom ui */
 .phabricator-notification-header .phabricator-notification-unread {
