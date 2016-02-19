@@ -5,7 +5,7 @@
 // @match        https://secure.phabricator.com/*
 // @match        https://phabricator.wikimedia.org/*
 // @match        https://bugzillapreview.wmflabs.org/*
-// @version      0.15
+// @version      0.16
 // @author       Bryan Davis
 // @license      MiT License; http://opensource.org/licenses/MIT
 // @downloadURL  https://bd808.github.io/userscripts/phabricator.user.js
@@ -64,16 +64,17 @@ GM_addStyle(GM_getResourceText('css'));
 })();
 
 /* Hide tags for archived projects */
-(function() {
+(window.setTimeout(function() {
     "use strict";
     var disabled = document.querySelectorAll('li a.phui-tag-shade-disabled'),
         disabledLen = disabled.length;
     for (var disabledIdx = 0; disabledIdx < disabledLen; disabledIdx++) {
         disabled[disabledIdx].parentNode.style.display = 'none';
     }
-})();
+},50))();
 
 /* Add a shortcut to unread notifications */
+/* FIXME: doesn't work. Needs to watch for the div being created. */
 (function() {
     "use strict";
     var nodes = document.querySelectorAll('.phabricator-notification-header');
