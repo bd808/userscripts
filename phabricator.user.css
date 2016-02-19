@@ -1,6 +1,6 @@
 /*!
  * bd808's phabricator css hacks
- * © 2014 Bryan Davis and contributors
+ * © 2016 Bryan Davis and contributors
  * License: http://opensource.org/licenses/MIT
  */
 
@@ -23,17 +23,17 @@
   margin:0 8px !important;
 }
 
-/* tiny tags */
-.phabricator-handle-tag-list .phui-tag-shade-slim .phui-tag.core {
+/* tiny tags on cards */
+.phui-workcard .phabricator-handle-tag-list .phui-tag-shade-slim .phui-tag.core {
   font-size:8px !important;
 }
-.phabricator-handle-tag-list .phabricator-handle-tag-list-item {
+.phui-workcard .phabricator-handle-tag-list .phabricator-handle-tag-list-item {
   line-height:normal !important;
   margin:0 2px 0 0 !important;
   overflow-x:hidden !important;
   width:32px !important;
 }
-.phabricator-handle-tag-list .phabricator-handle-tag-list-item:hover {
+.phui-workcard .phabricator-handle-tag-list .phabricator-handle-tag-list-item:hover {
   width:auto;
 }
 
