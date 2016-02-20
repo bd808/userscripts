@@ -17,10 +17,11 @@
 .phui-workboard-view .aphront-multi-column-fixed .phui-workpanel-body,
 .aphront-multi-column-fixed .phui-workpanel-view,
 .phui-workpanel-view .phui-header-shell {
-  width:220px !important;
+  width:200px !important;
 }
-.phui-header-action-list li {
-  margin:0 8px !important;
+
+.mmr {
+  margin-right:3px !important;
 }
 
 /* tiny tags on cards */
@@ -35,6 +36,23 @@
 }
 .phui-workcard .phabricator-handle-tag-list .phabricator-handle-tag-list-item:hover {
   width:auto;
+}
+
+/* less padding for cards */
+.phui-object-item-with-1-actions .phui-object-item-content-box {
+  margin:0 !important;
+}
+.phui-workcard.phui-object-item {
+  margin-bottom:2px !important;
+}
+.phui-workpanel-view .phui-workpanel-body-content {
+  padding:0 2px !important;
+}
+.phui-workpanel-view .phui-workpanel-body {
+  padding:0 !important;
+}
+.phui-workpanel-view .phui-header-shell {
+  padding:4px !important;
 }
 
 /* kill per-column scroll */
