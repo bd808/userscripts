@@ -99,9 +99,9 @@
 .phui-workboard-color .phui-crumbs-view,
 .phui-workboard-color .phui-crumbs-view a,
 .phui-workboard-color .phui-crumbs-view .phui-icon-view {
-    background-color:transparent;
-    border:none;
-    color: #464c5c;
+    background-color:#f1f1f4;
+    color:#464c5c;
+    border-bottom:1px solid rgba(55, 55, 55, 0.1);
 }
 .phui-workboard-color .phui-crumbs-view a:hover,
 .phui-workboard-color .phui-crumbs-view a:hover .phui-icon-view {
