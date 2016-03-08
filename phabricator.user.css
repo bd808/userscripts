@@ -90,8 +90,37 @@
 .phui-workboard-pink,
 .phui-workboard-fire,
 .phui-workboard-grey {
-    background-color:#74777d !important;
+    background-color:transparent !important;
     background-image:none !important;
+}
+.phui-workboard-color .phabricator-nav-content .phui-workboard-view-shadow {
+    background-color:#fff;
+}
+.phui-workboard-color .phui-crumbs-view,
+.phui-workboard-color .phui-crumbs-view a,
+.phui-workboard-color .phui-crumbs-view .phui-icon-view {
+    background-color:transparent;
+    border:none;
+    color: #464c5c;
+}
+.phui-workboard-color .phui-crumbs-view a:hover,
+.phui-workboard-color .phui-crumbs-view a:hover .phui-icon-view {
+    color: #2980b9;
+}
+.phui-workboard-color .phuix-dropdown-menu {
+    background-color:#fff;
+}
+.phui-workboard-color .phui-workpanel-view .phui-box-grey {
+    background-color:#f7f7f9;
+}
+body.phui-workboard-color .phui-profile-menu .phabricator-side-menu {
+    background-color:#062842;
+}
+body.phui-workboard-color .phabricator-side-menu .phui-profile-menu-footer-1 {
+    background-color:#062842;
+}
+.phui-workboard-color .phui-profile-menu .phabricator-side-menu {
+    box-shadow:-2px 0 2px rgba(0, 0, 0, 0.15) inset;
 }
 
 /* custom ui */
