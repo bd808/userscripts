@@ -67,6 +67,33 @@
   overflow:visible !important;
 }
 
+/* kill custom workboard colors */
+.phui-workboard-gradient-red,
+.phui-workboard-gradient-orange,
+.phui-workboard-gradient-yellow,
+.phui-workboard-gradient-green,
+.phui-workboard-gradient-blue,
+.phui-workboard-gradient-bluegrey,
+.phui-workboard-gradient-indigo,
+.phui-workboard-gradient-violet,
+.phui-workboard-gradient-sky,
+.phui-workboard-gradient-pink,
+.phui-workboard-gradient-grey,
+.phui-workboard-red,
+.phui-workboard-orange,
+.phui-workboard-yellow,
+.phui-workboard-green,
+.phui-workboard-blue,
+.phui-workboard-indigo,
+.phui-workboard-violet,
+.phui-workboard-sky,
+.phui-workboard-pink,
+.phui-workboard-fire,
+.phui-workboard-grey {
+    background-color:#74777d !important;
+    background-image:none !important;
+}
+
 /* custom ui */
 .phabricator-notification-header .phabricator-notification-unread {
   color:#18559D;
