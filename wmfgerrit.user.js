@@ -6,8 +6,8 @@
 // @version      0.2
 // @author       Bryan Davis
 // @license      MiT License; http://opensource.org/licenses/MIT
-// @downloadURL  https://bd808.github.io/userscripts/gerrit.user.js
-// @updateURL    https://bd808.github.io/userscripts/gerrit.user.js
+// @downloadURL  https://bd808.github.io/userscripts/wmfgerrit.user.js
+// @updateURL    https://bd808.github.io/userscripts/wmfgerrit.user.js
 // @grant        GM_addStyle
 // @grant        GM_getResourceText
 // @resource     gerritcss http://bd808.com/userscripts/wmfgerrit.user.css
