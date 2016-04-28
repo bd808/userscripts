@@ -154,13 +154,17 @@ body.phui-workboard-color .phabricator-side-menu .phui-profile-menu-footer-1 {
 }
 .phabricator-action-list-view .phabricator-action-view {
     font-size:smaller;
-    max-width:20ch;
+    max-width:22ch;
     overflow:hidden;
     white-space:nowrap;
 }
 .phabricator-action-view button.phabricator-action-view-item,
 .phabricator-action-view-item {
-    padding:2px 2px 2px 28px;
+    padding:2px 2px 2px 16px;
+}
+.phui-two-column-properties .phabricator-action-view-icon {
+    left:0px;
+    top:4px;
 }
 
 .phui-two-column-view .phui-two-column-header {
