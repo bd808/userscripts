@@ -179,6 +179,17 @@ body.phui-workboard-color .phabricator-side-menu .phui-profile-menu-footer-1 {
 .phui-box.phui-object-box.phui-box-blue-property .phui-header-shell {
     padding:0 1em;
 }
+.phui-curtain-panel-body .phabricator-handle-tag-list-item {
+    font-size:smaller;
+    line-height:inherit;
+}
+.phui-curtain-panel-body .phabricator-handle-tag-list-item .phui-tag-core {
+    display:inline-block;
+    max-width:22ch;
+    overflow:hidden;
+    padding:0;
+    white-space:nowrap;
+}
 
 /* custom ui */
 .phabricator-notification-header .phabricator-notification-unread {
