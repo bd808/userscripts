@@ -5,7 +5,7 @@
 // @match        https://secure.phabricator.com/*
 // @match        https://phabricator.wikimedia.org/*
 // @match        https://bugzillapreview.wmflabs.org/*
-// @version      0.21
+// @version      0.22
 // @author       Bryan Davis
 // @license      MiT License; http://opensource.org/licenses/MIT
 // @downloadURL  https://bd808.github.io/userscripts/phabricator.user.js
@@ -72,6 +72,35 @@ GM_addStyle(GM_getResourceText('css'));
         disabled[disabledIdx].parentNode.style.display = 'none';
     }
 },50))();
+
+/* Task view sidebar (See https://phabricator.wikimedia.org/T133825#2248790) */
+(function() {
+    "use strict";
+    var sidebarSel = '#phabricator-standard-page-body .phui-side-column',
+        sidebar = document.querySelector(sidebarSel),
+        misplacedSel = '.phui-box .phui-curtain-panel',
+        misplacedDetails = sidebar.querySelectorAll(misplacedSel),
+        detailsSel = '#phabricator-standard-page-body .phui-property-list-properties',
+        details = document.querySelector(detailsSel);
+    for ( var i = misplacedDetails.length - 1; i >= 0; i-- ) {
+        var n = misplacedDetails.item( i ),
+            k = n.querySelector( '.phui-curtain-panel-header' ),
+            v = n.querySelector( '.phui-curtain-panel-body' ),
+            dt = document.createElement( 'dt' ),
+            dd = document.createElement( 'dd' );
+        dt.className = 'phui-property-list-key';
+        while ( k.firstChild ) {
+            dt.appendChild( k.firstChild );
+        }
+        dd.className = 'phui-property-list-value';
+        while ( v.firstChild ) {
+            dd.appendChild( v.firstChild );
+        }
+        details.insertBefore( dd, details.firstChild );
+        details.insertBefore( dt, details.firstChild );
+        n.parentNode.removeChild( n );
+    }
+})();
 
 /* Add a shortcut to unread notifications */
 /* FIXME: doesn't work. Needs to watch for the div being created. */

@@ -125,6 +125,20 @@ body.phui-workboard-color .phabricator-side-menu .phui-profile-menu-footer-1 {
     box-shadow:-2px 0 2px rgba(0, 0, 0, 0.15) inset;
 }
 
+/* Task sidebar (see https://phabricator.wikimedia.org/T133825#2248704) */
+.device-desktop .phui-two-column-view .phui-main-column {
+    width:auto;
+    float:none;
+}
+.device-desktop .phui-two-column-view .phui-side-column {
+    margin-left:20px;
+}
+.phui-object-box,
+.phui-timeline-shell {
+    /* https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context */
+    overflow:hidden;
+}
+
 /* custom ui */
 .phabricator-notification-header .phabricator-notification-unread {
   color:#18559D;
