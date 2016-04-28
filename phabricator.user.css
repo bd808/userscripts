@@ -163,6 +163,19 @@ body.phui-workboard-color .phabricator-side-menu .phui-profile-menu-footer-1 {
     padding:2px 2px 2px 28px;
 }
 
+.phui-two-column-view .phui-two-column-header {
+    margin-bottom:.5em;
+}
+.phui-two-column-view .phui-two-column-content .phui-object-box {
+    margin:0 0 .5em;
+}
+.phui-two-column-view .phui-main-column .phui-object-box + .phui-timeline-view {
+    margin:0;
+}
+.phui-box.phui-object-box.phui-box-blue-property .phui-header-shell {
+    padding:0 1em;
+}
+
 /* custom ui */
 .phabricator-notification-header .phabricator-notification-unread {
   color:#18559D;
