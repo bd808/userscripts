@@ -138,6 +138,30 @@ body.phui-workboard-color .phabricator-side-menu .phui-profile-menu-footer-1 {
     /* https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context */
     overflow:hidden;
 }
+/* moar squishing! */
+.device-desktop .phui-curtain-panel {
+    padding:.5em 0;
+}
+.device-desktop .phui-curtain-panel .phui-curtain-panel-header,
+.device-desktop .phui-curtain-panel .phui-curtain-panel-body {
+    padding:0;
+}
+.phui-side-column .phui-two-column-properties .phabricator-action-list-view {
+    background:#fff;
+    float:right;
+    margin-left:4px;
+    padding:0;
+}
+.phabricator-action-list-view .phabricator-action-view {
+    font-size:smaller;
+    max-width:20ch;
+    overflow:hidden;
+    white-space:nowrap;
+}
+.phabricator-action-view button.phabricator-action-view-item,
+.phabricator-action-view-item {
+    padding:2px 2px 2px 28px;
+}
 
 /* custom ui */
 .phabricator-notification-header .phabricator-notification-unread {
