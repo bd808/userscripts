@@ -8,9 +8,6 @@
 .phui-timeline-spacer {
   display:none;
 }
-.phui-timeline-shell {
-  margin-bottom:.5em;
-}
 
 /* squish boards horizontally */
 .phui-workboard-view .aphront-multi-column-fixed .aphront-multi-column-column-outer,
