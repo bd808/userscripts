@@ -5,7 +5,7 @@
 // @match        https://secure.phabricator.com/*
 // @match        https://phabricator.wikimedia.org/*
 // @match        https://bugzillapreview.wmflabs.org/*
-// @version      0.26
+// @version      0.27
 // @author       Bryan Davis
 // @license      MiT License; http://opensource.org/licenses/MIT
 // @downloadURL  https://bd808.github.io/userscripts/phabricator.user.js
@@ -19,7 +19,7 @@
 GM_addStyle(GM_getResourceText('css'));
 
 /* Hide spammy events */
-(function() {
+var hideSpammyEvents = function() {
     "use strict";
     var nodes = document.querySelectorAll('.phui-timeline-minor-event'),
         nodesLen = nodes.length,
@@ -46,7 +46,17 @@ GM_addStyle(GM_getResourceText('css'));
             nodes[nodeIdx].style.display = 'none';
         }
     }
-})();
+}
+/* Run on page load */
+hideSpammyEvents();
+/* Run when new nodes are inserted in the DOM too (Show Older Changes) */
+var mutationTarget = document.querySelector('.phui-timeline-view'),
+    observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            hideSpammyEvents();
+        });
+    });
+observer.observe(mutationTarget, { childList: true });
 
 /* Link bugzilla references to original bug */
 (function() {

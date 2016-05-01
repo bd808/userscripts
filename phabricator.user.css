@@ -152,7 +152,7 @@ body.phui-workboard-color .phabricator-side-menu .phui-profile-menu-footer-1 {
     margin-left:4px;
     padding:0;
 }
-.phabricator-action-list-view .phabricator-action-view {
+.phui-side-column .phui-two-column-properties .phabricator-action-list-view .phabricator-action-view {
     font-size:smaller;
     max-width:22ch;
     overflow:hidden;
