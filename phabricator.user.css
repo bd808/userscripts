@@ -155,8 +155,8 @@ body.phui-workboard-color .phabricator-side-menu .phui-profile-menu-footer-1 {
     overflow:hidden;
     white-space:nowrap;
 }
-.phabricator-action-view button.phabricator-action-view-item,
-.phabricator-action-view-item {
+.phui-side-column .phui-two-column-properties .phabricator-action-view button.phabricator-action-view-item,
+.phui-side-column .phui-two-column-properties .phabricator-action-view-item {
     padding:2px 2px 2px 16px;
 }
 .phui-two-column-properties .phabricator-action-view-icon {
