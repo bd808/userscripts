@@ -5,7 +5,7 @@
 // @match        https://secure.phabricator.com/*
 // @match        https://phabricator.wikimedia.org/*
 // @match        https://bugzillapreview.wmflabs.org/*
-// @version      0.32
+// @version      0.33
 // @author       Bryan Davis
 // @license      MiT License; http://opensource.org/licenses/MIT
 // @downloadURL  https://bd808.github.io/userscripts/phabricator.user.js
@@ -48,7 +48,7 @@ var hideSpammyEvents = function() {
     }
 }
 /* Run on page load */
-hideSpammyEvents();
+window.addEventListener('load', hideSpammyEvents, false);
 /* Run when new nodes are inserted in the DOM too (Show Older Changes) */
 var mutationTarget = document.querySelector('.phui-timeline-view'),
     observer = new MutationObserver(function(mutations) {
@@ -59,7 +59,7 @@ var mutationTarget = document.querySelector('.phui-timeline-view'),
 observer.observe(mutationTarget, { childList: true });
 
 /* Link bugzilla references to original bug */
-(function() {
+window.addEventListener('load', function() {
     "use strict";
     var nodes = document.querySelectorAll('.phui-property-list-value'),
         nodesLen = nodes.length,
@@ -71,7 +71,7 @@ observer.observe(mutationTarget, { childList: true });
                 nodes[nodeIdx].innerHTML.replace( bzIdRegex, bzLink );
         }
     }
-})();
+}, false);
 
 /* Hide tags for archived projects */
 (window.setTimeout(function() {
@@ -84,14 +84,19 @@ observer.observe(mutationTarget, { childList: true });
 },50))();
 
 /* Task view sidebar (See https://phabricator.wikimedia.org/T133825#2248790) */
-(function() {
+window.addEventListener('load', function() {
     "use strict";
     var sidebarSel = '#phabricator-standard-page-body .phui-side-column',
         sidebar = document.querySelector(sidebarSel),
         misplacedSel = '.phui-box .phui-curtain-panel',
         misplacedDetails = sidebar.querySelectorAll(misplacedSel),
         detailsSel = '#phabricator-standard-page-body .phui-property-list-properties',
-        details = document.querySelector(detailsSel);
+        details = document.querySelector(detailsSel),
+        sbtop = sidebar.getBoundingClientRect().top,
+        headerSel = '#phabricator-standard-page-body .phui-two-column-header',
+        header = document.querySelector(headerSel),
+        htop = header.getBoundingClientRect().top;
+
     for ( var i = misplacedDetails.length - 1; i >= 0; i-- ) {
         var n = misplacedDetails.item( i ),
             k = n.querySelector( '.phui-curtain-panel-header' ),
@@ -110,17 +115,8 @@ observer.observe(mutationTarget, { childList: true });
         details.insertBefore( dt, details.firstChild );
         n.parentNode.removeChild( n );
     }
-})();
 
-/* Move sidebar up to match top of header */
-(function() {
-    "use strict";
-    var sidebarSel = '#phabricator-standard-page-body .phui-side-column',
-        sidebar = document.querySelector(sidebarSel),
-        headerSel = '#phabricator-standard-page-body .phui-two-column-header',
-        header = document.querySelector(headerSel),
-        hheight = header.clientHeight;
-    sidebar.style.marginTop = "-" + hheight + "px";
-})();
+    sidebar.style.marginTop = (htop - sbtop) + "px";
+}, false);
 
 /* vim:sw=4:ts=4:sts=4:et: */
