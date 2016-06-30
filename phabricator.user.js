@@ -5,7 +5,7 @@
 // @match        https://secure.phabricator.com/*
 // @match        https://phabricator.wikimedia.org/*
 // @match        https://bugzillapreview.wmflabs.org/*
-// @version      0.30
+// @version      0.31
 // @author       Bryan Davis
 // @license      MiT License; http://opensource.org/licenses/MIT
 // @downloadURL  https://bd808.github.io/userscripts/phabricator.user.js
@@ -112,15 +112,15 @@ observer.observe(mutationTarget, { childList: true });
     }
 })();
 
-/* Add a shortcut to unread notifications */
-/* FIXME: doesn't work. Needs to watch for the div being created. */
+/* Move sidebar up to match top of header */
 (function() {
     "use strict";
-    var nodes = document.querySelectorAll('.phabricator-notification-header');
-    if ( nodes.length > 0 ) {
-        nodes[0].innerHTML = nodes[0].innerHTML +
-            '<a href="/notification/query/unread/" class="phabricator-notification-unread">Unread</a>';
-    }
+    var sidebarSel = '#phabricator-standard-page-body .phui-side-column',
+        sidebar = document.querySelector(sidebarSel),
+        headerSel = '#phabricator-standard-page-body .phui-two-column-header',
+        header = document.querySelector(headerSel),
+        hheight = header.clientHeight;
+    sidebar.style.merginTop = "-" + hheight + "px";
 })();
 
 /* vim:sw=4:ts=4:sts=4:et: */

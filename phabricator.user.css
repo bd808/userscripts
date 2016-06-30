@@ -175,7 +175,6 @@ body.phui-workboard-color .phabricator-side-menu .phui-profile-menu-footer-1 {
 }
 .device-desktop .phui-two-column-view .phui-side-column {
     margin-left:0;
-    margin-top:-86px;
 }
 .phui-two-column-view .phui-two-column-content .phui-object-box {
     margin:0 0 .5em;
@@ -196,6 +195,14 @@ body.phui-workboard-color .phabricator-side-menu .phui-profile-menu-footer-1 {
     overflow:hidden;
     padding:0;
     white-space:nowrap;
+}
+.phui-side-column .phabricator-action-view-submenu .caret-right {
+    float:none;
+    margin:0;
+}
+.phui-side-column .phabricator-action-view-submenu .caret {
+    float:none;
+    margin:5px 0 0;
 }
 
 /* custom ui */
