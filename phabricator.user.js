@@ -5,7 +5,7 @@
 // @match        https://secure.phabricator.com/*
 // @match        https://phabricator.wikimedia.org/*
 // @match        https://bugzillapreview.wmflabs.org/*
-// @version      0.33
+// @version      0.34
 // @author       Bryan Davis
 // @license      MiT License; http://opensource.org/licenses/MIT
 // @downloadURL  https://bd808.github.io/userscripts/phabricator.user.js
@@ -13,6 +13,7 @@
 // @grant        GM_addStyle
 // @grant        GM_getResourceText
 // @resource     css http://bd808.com/userscripts/phabricator.user.css
+// @run-at       document-idle
 // ==/UserScript==
 
 /* Load custom css */
@@ -48,7 +49,8 @@ var hideSpammyEvents = function() {
     }
 }
 /* Run on page load */
-window.addEventListener('load', hideSpammyEvents, false);
+hideSpammyEvents();
+
 /* Run when new nodes are inserted in the DOM too (Show Older Changes) */
 var mutationTarget = document.querySelector('.phui-timeline-view'),
     observer = new MutationObserver(function(mutations) {
@@ -59,7 +61,7 @@ var mutationTarget = document.querySelector('.phui-timeline-view'),
 observer.observe(mutationTarget, { childList: true });
 
 /* Link bugzilla references to original bug */
-window.addEventListener('load', function() {
+(function() {
     "use strict";
     var nodes = document.querySelectorAll('.phui-property-list-value'),
         nodesLen = nodes.length,
@@ -71,31 +73,27 @@ window.addEventListener('load', function() {
                 nodes[nodeIdx].innerHTML.replace( bzIdRegex, bzLink );
         }
     }
-}, false);
+})();
 
 /* Hide tags for archived projects */
-(window.setTimeout(function() {
+(function() {
     "use strict";
     var disabled = document.querySelectorAll('li a.phui-tag-shade-disabled'),
         disabledLen = disabled.length;
     for (var disabledIdx = 0; disabledIdx < disabledLen; disabledIdx++) {
         disabled[disabledIdx].parentNode.style.display = 'none';
     }
-},50))();
+})();
 
 /* Task view sidebar (See https://phabricator.wikimedia.org/T133825#2248790) */
-window.addEventListener('load', function() {
+(function() {
     "use strict";
     var sidebarSel = '#phabricator-standard-page-body .phui-side-column',
         sidebar = document.querySelector(sidebarSel),
         misplacedSel = '.phui-box .phui-curtain-panel',
         misplacedDetails = sidebar.querySelectorAll(misplacedSel),
-        detailsSel = '#phabricator-standard-page-body .phui-property-list-properties',
-        details = document.querySelector(detailsSel),
-        sbtop = sidebar.getBoundingClientRect().top,
-        headerSel = '#phabricator-standard-page-body .phui-two-column-header',
-        header = document.querySelector(headerSel),
-        htop = header.getBoundingClientRect().top;
+        detailsSel = '#phabricator-standard-page-body .phui-property-list-section .phui-property-list-properties',
+        details = document.querySelector(detailsSel);
 
     for ( var i = misplacedDetails.length - 1; i >= 0; i-- ) {
         var n = misplacedDetails.item( i ),
@@ -115,8 +113,17 @@ window.addEventListener('load', function() {
         details.insertBefore( dt, details.firstChild );
         n.parentNode.removeChild( n );
     }
+})/*()*/;
 
+(function() {
+    "use strict";
+    var sidebarSel = '#phabricator-standard-page-body .phui-side-column',
+        sidebar = document.querySelector(sidebarSel),
+        sbtop = sidebar.getBoundingClientRect().top,
+        headerSel = '#phabricator-standard-page-body .phui-two-column-header',
+        header = document.querySelector(headerSel),
+        htop = header.getBoundingClientRect().top;
     sidebar.style.marginTop = (htop - sbtop) + "px";
-}, false);
+})();
 
 /* vim:sw=4:ts=4:sts=4:et: */
