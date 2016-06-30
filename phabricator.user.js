@@ -5,7 +5,7 @@
 // @match        https://secure.phabricator.com/*
 // @match        https://phabricator.wikimedia.org/*
 // @match        https://bugzillapreview.wmflabs.org/*
-// @version      0.31
+// @version      0.32
 // @author       Bryan Davis
 // @license      MiT License; http://opensource.org/licenses/MIT
 // @downloadURL  https://bd808.github.io/userscripts/phabricator.user.js
@@ -120,7 +120,7 @@ observer.observe(mutationTarget, { childList: true });
         headerSel = '#phabricator-standard-page-body .phui-two-column-header',
         header = document.querySelector(headerSel),
         hheight = header.clientHeight;
-    sidebar.style.merginTop = "-" + hheight + "px";
+    sidebar.style.marginTop = "-" + hheight + "px";
 })();
 
 /* vim:sw=4:ts=4:sts=4:et: */
