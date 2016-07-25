@@ -8,11 +8,11 @@
 body #gerrit_topmenu {
   position:inherit;
 }
-body #gerrit_header {
+body div#gerrit_header {
   display:none !important; /* fighting with crappy custom css */
 }
 body .searchPanel .searchTextBox {
-  width:25em;
+  width:25ch;
 }
 /* squish the dashboard table horizontally */
 body .changeTable {
@@ -58,5 +58,28 @@ body .changeTable .cAPPROVAL .gwt-InlineLabel {
 }
 body .changeTable .cAPPROVAL {
   width:1px;
+}
+/*review screen*/
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-infoTable > tbody > tr > td /*DEBUGGING!*/ {
+  border: 1px solid red;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-commitColumn,
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-infoColumn,
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-relatedColumn {
+  display:block;
+  float:right;
+}
+td.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-commitColumn {
+  width:80ch;
+  float:left;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-commitColumn .com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-collapsed div.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-scroll {
+    height:auto;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-commitColumn .com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-more {
+  display:none;
+}
+table#change_infoTable {
+  width:auto;
 }
 /* vim:sw=2:ts=2:sts=2:et: */
