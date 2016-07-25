@@ -15,48 +15,48 @@ body .searchPanel .searchTextBox {
   width:25ch;
 }
 /* squish the dashboard table horizontally */
-body .changeTable {
+div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable {
   table-layout:fixed;
   width:100%;
 }
-body .changeTable td {
+div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable td {
   padding:0;
   width:100%;
 }
-body .changeTable td:nth-child(1) /*current row*/ {
+div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable td:nth-child(1) /*current row*/ {
   width:15px;
 }
-body .changeTable td:nth-child(2) /*starred*/ {
+div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable td:nth-child(2) /*starred*/ {
   width:20px;
 }
-body .changeTable td:nth-child(5) /*status*/,
-body .changeTable td:nth-child(10) /*size*/{
+div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable td:nth-child(5) /*status*/,
+div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable td:nth-child(10) /*size*/{
   display:none;
 }
-body .changeTable td:nth-child(6) /*owner*/,
-body .changeTable td:nth-child(7) /*project*/,
-body .changeTable td:nth-child(8) /*branch*/,
-body .changeTable td:nth-child(9) /*updated*/,
-body .changeTable td:nth-child(11) /*CR*/
+div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable td:nth-child(6) /*owner*/,
+div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable td:nth-child(7) /*project*/,
+div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable td:nth-child(8) /*branch*/,
+div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable td:nth-child(9) /*updated*/,
+div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable td:nth-child(11) /*CR*/
 {
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
   width:15ch;
 }
-body .changeTable td:nth-child(12) /*V*/ {
+div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable td:nth-child(12) /*V*/ {
   width:20px;
 }
-body .changeTable .cOWNER,
-body .changeTable .cStatus,
-body .changeTable .cLastUpdate,
-body .changeTable .cAPPROVAL {
+div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable .cOWNER,
+div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable .cStatus,
+div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable .cLastUpdate,
+div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable .cAPPROVAL {
   white-space:normal;
 }
-body .changeTable .cAPPROVAL .gwt-InlineLabel {
+div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable .cAPPROVAL .gwt-InlineLabel {
   display:none;
 }
-body .changeTable .cAPPROVAL {
+div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable .cAPPROVAL {
   width:1px;
 }
 /*review screen*/
@@ -82,13 +82,14 @@ td.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-commitCo
 td.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-infoColumn,
 td.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-relatedColumn {
   display:inline-block;
-  float:left;
+  float:right;
   width:auto;
   vertical-align:top;
 }
 /* commit info */
 td.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-commitColumn {
-  width:75ch;
+  width:55%;
+  float:left;
 }
 td.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-commitColumn .com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-scroll {
   width:auto;
@@ -104,7 +105,8 @@ td.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-commitCo
 }
 /*patch info*/
 td.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-infoColumn {
-  width:auto !important;
+  padding:0;
+  width:45% !important;
 }
 table#change_infoTable {
   width:auto;
@@ -117,5 +119,8 @@ td.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-relatedC
 div.popupContent {
   border:1px solid #ccc;
   border-top:none;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-sectionHeader {
+  clear:both;
 }
 /* vim:sw=2:ts=2:sts=2:et: */
