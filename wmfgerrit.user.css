@@ -9,7 +9,7 @@ body #gerrit_topmenu {
   position:inherit;
 }
 body #gerrit_header {
-  display:none;
+  display:none !important; /* fighting with crappy custom css */
 }
 body .searchPanel .searchTextBox {
   width:25em;
@@ -34,13 +34,15 @@ body .changeTable td:nth-child(10) /*size*/{
   display:none;
 }
 body .changeTable td:nth-child(6) /*owner*/,
+body .changeTable td:nth-child(7) /*project*/,
 body .changeTable td:nth-child(8) /*branch*/,
+body .changeTable td:nth-child(9) /*updated*/,
 body .changeTable td:nth-child(11) /*CR*/
 {
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
-  width:20ch;
+  width:15ch;
 }
 body .changeTable td:nth-child(12) /*V*/ {
   width:20px;
