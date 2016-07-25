@@ -8,7 +8,7 @@
 .gs .ii,
 textarea.Ak,
 div[aria-label="Message Body"] {
-  font-family:'Inconsolata' 'Consolas' 'Deja Vu Sans Mono' 'Droid Sans Mono' monospace !important;
+  font-family:Inconsolata, Consolas, "Deja Vu Sans Mono", "Droid Sans Mono", monospace !important;
 }
 
 /* g+ profile link */
