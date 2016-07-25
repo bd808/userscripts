@@ -1,15 +1,60 @@
 /*!
  * bd808's WMF gerrit css hacks
- * © 2014 Bryan Davis and contributors
+ * © 2016 Bryan Davis and contributors
  * License: http://opensource.org/licenses/MIT
  */
 
-#gerrit_topmenu {
-    position:inherit !important;
+/* hide the Wikimedia logo and shift menu to the left */
+body #gerrit_topmenu {
+  position:inherit;
 }
-#gerrit_header {
-    display:none !important;
+body #gerrit_header {
+  display:none;
 }
-.searchPanel .gwt-TextBox {
-    width:25em;
+body .searchPanel .searchTextBox {
+  width:25em;
 }
+/* squish the dashboard table horizontally */
+body .changeTable {
+  table-layout:fixed;
+  width:100%;
+}
+body .changeTable td {
+  padding:0;
+  width:100%;
+}
+body .changeTable td:nth-child(1) /*current row*/ {
+  width:15px;
+}
+body .changeTable td:nth-child(2) /*starred*/ {
+  width:20px;
+}
+body .changeTable td:nth-child(5) /*status*/,
+body .changeTable td:nth-child(10) /*size*/{
+  display:none;
+}
+body .changeTable td:nth-child(6) /*owner*/,
+body .changeTable td:nth-child(8) /*branch*/,
+body .changeTable td:nth-child(11) /*CR*/
+{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  width:20ch;
+}
+body .changeTable td:nth-child(12) /*V*/ {
+  width:20px;
+}
+body .changeTable .cOWNER,
+body .changeTable .cStatus,
+body .changeTable .cLastUpdate,
+body .changeTable .cAPPROVAL {
+  white-space:normal;
+}
+body .changeTable .cAPPROVAL .gwt-InlineLabel {
+  display:none;
+}
+body .changeTable .cAPPROVAL {
+  width:1px;
+}
+/* vim:sw=2:ts=2:sts=2:et: */
