@@ -110,7 +110,7 @@ td.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-infoColu
   width:45% !important;
 }
 table#change_infoTable {
-  width:auto;
+  margin:0;
 }
 /*related*/
 td.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-relatedColumn div {
