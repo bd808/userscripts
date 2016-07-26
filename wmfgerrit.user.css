@@ -84,6 +84,7 @@ table.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-infoT
 td.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-commitColumn,
 td.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-infoColumn,
 td.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-relatedColumn {
+  border-left:1px solid #333;
   clear:right;
   display:inline-block;
   float:right;
@@ -94,6 +95,7 @@ td.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-relatedC
 }
 /* commit info */
 tr td.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-commitColumn {
+  border-left:none;
   clear:left;
   float:left;
   padding:0;
@@ -116,6 +118,7 @@ td.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-commitCo
 /*patch info*/
 td.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-infoColumn {
   float:right;
+  margin:0;
   padding:0;
   width:44% !important; /* grr. !imporant in the upstream styles */
 }
@@ -123,6 +126,9 @@ table#change_infoTable {
   margin:0;
 }
 /*labels*/
+table.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-labels {
+  width:100%;
+}
 .com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-label_need,
 .com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-label_need+ td {
   background-color:#f0f000;
