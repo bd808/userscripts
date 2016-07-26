@@ -3,7 +3,7 @@
 // @namespace    http://bd808.com/userscripts/
 // @description  Make gerrit look and work like I want it to
 // @match        https://gerrit.wikimedia.org/*
-// @version      0.4.5
+// @version      0.4.6
 // @author       Bryan Davis
 // @license      MIT License; http://opensource.org/licenses/MIT
 // @downloadURL  https://bd808.github.io/userscripts/wmfgerrit.user.js

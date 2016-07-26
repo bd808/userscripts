@@ -78,21 +78,29 @@ div.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-headerL
   border: 1px solid red;
 }
 */
+table.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-infoTable {
+  width:100%;
+}
 td.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-commitColumn,
 td.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-infoColumn,
 td.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-relatedColumn {
+  clear:right;
   display:inline-block;
-  float:left;
-  width:auto;
+  float:right;
+  padding:0;
   vertical-align:top;
+  width:45%;
 }
 /* commit info */
 td.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-commitColumn {
+  clear:left;
+  float:left;
   padding:0;
   width:55%;
 }
 td.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-commitColumn .com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-scroll {
   width:auto;
+  min-height:20ch;
 }
 .com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-commitColumn .com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-collapsed div.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-scroll {
   height:auto;
@@ -114,7 +122,7 @@ table#change_infoTable {
 }
 /*related*/
 td.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-relatedColumn div {
-  height:auto !important; /*yuck! inline styles to fight with*/
+  max-height:20ch !important;
 }
 /*popups*/
 div.popupContent {
@@ -123,6 +131,10 @@ div.popupContent {
 }
 .com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-sectionHeader {
   clear:both;
+}
+/*Files*/
+.changeTable.com-google-gerrit-client-change-FileTable-FileTableCss-table {
+  width:100%;
 }
 /*History*/
 div.com-google-gerrit-client-change-Message_BinderImpl_GenCss_style-messageBox {
