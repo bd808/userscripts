@@ -3,9 +3,9 @@
 // @namespace    http://bd808.com/userscripts/
 // @description  Make gmail look and work like I want it to
 // @match        https://mail.google.com/*
-// @version      0.3
+// @version      0.4
 // @author       Bryan Davis
-// @license      MiT License; http://opensource.org/licenses/MIT
+// @license      MIT License; http://opensource.org/licenses/MIT
 // @downloadURL  https://bd808.github.io/userscripts/gmail.user.js
 // @updateURL    https://bd808.github.io/userscripts/gmail.user.js
 // @grant        GM_addStyle
