@@ -1,4 +1,4 @@
-/*!
+/*
  * bd808's WMF gerrit css hacks
  * © 2016 Bryan Davis and contributors
  * License: http://opensource.org/licenses/MIT
@@ -87,12 +87,13 @@ td.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-relatedC
   clear:right;
   display:inline-block;
   float:right;
+  margin-bottom:.5em;
   padding:0;
   vertical-align:top;
-  width:45%;
+  width:44%;
 }
 /* commit info */
-td.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-commitColumn {
+tr td.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-commitColumn {
   clear:left;
   float:left;
   padding:0;
@@ -101,6 +102,7 @@ td.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-commitCo
 td.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-commitColumn .com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-scroll {
   width:auto;
   min-height:20ch;
+  margin-bottom:.5em;
 }
 .com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-commitColumn .com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-collapsed div.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-scroll {
   height:auto;
@@ -109,20 +111,30 @@ td.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-commitCo
   display:none;
 }
 .com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-commitColumn .com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-header {
-  width:auto;
+  width:100%;
 }
 /*patch info*/
 td.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-infoColumn {
   float:right;
   padding:0;
-  width:45% !important;
+  width:44% !important; /* grr. !imporant in the upstream styles */
 }
 table#change_infoTable {
   margin:0;
 }
+/*labels*/
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-label_need,
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-label_need+ td {
+  background-color:#f0f000;
+  color:#000;
+}
 /*related*/
 td.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-relatedColumn div {
-  max-height:20ch !important;
+  height: auto !important;
+  max-height:7em !important;
+}
+table.com-google-gerrit-client-change-RelatedChanges-RelatedChangesCss-tabPanel {
+  width:100%;
 }
 /*popups*/
 div.popupContent {
