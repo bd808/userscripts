@@ -129,10 +129,23 @@ table#change_infoTable {
 table.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-labels {
   width:100%;
 }
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-label_ok,
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-label_ok + td {
+  background-color:#00f000;
+  color:#000;
+}
 .com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-label_need,
-.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-label_need+ td {
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-label_need + td {
   background-color:#f0f000;
   color:#000;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-label_reject,
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-label_reject + td {
+  background-color:#f00000;
+  color:#000;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-label_user {
+  color:#333;
 }
 /*related*/
 td.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-relatedColumn div {
