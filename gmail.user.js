@@ -3,7 +3,7 @@
 // @namespace    http://bd808.com/userscripts/
 // @description  Make gmail look and work like I want it to
 // @match        https://mail.google.com/*
-// @version      0.5
+// @version      0.5.1
 // @author       Bryan Davis
 // @license      MIT License; http://opensource.org/licenses/MIT
 // @downloadURL  https://bd808.github.io/userscripts/gmail.user.js
@@ -15,10 +15,9 @@
 GM_addStyle(GM_getResourceText('gmailcss'));
 
 /* Strip inline message styles */
-var interestingNodes = '.gs .ii',
-    stripInlineStyles = function() {
+var stripInlineStyles = function() {
         "use strict";
-        var msgBody = document.querySelectorAll(interestingNodes),
+        var msgBody = document.querySelectorAll('.gs .ii'),
             remove = ['style', 'face', 'size'],
             strip = function (n) {
                 if ('removeAttribute' in n) {
@@ -37,15 +36,15 @@ var interestingNodes = '.gs .ii',
         for (var i = 0, len = msgBody.length; i < len; i++) {
             down(msgBody[i]);
         }
-    };
-/* Run on page load */
-stripInlineStyles();
-
-/* Run when new nodes are inserted in the DOM too (open new message)*/
-var mutationTarget = document.querySelector(interestingNodes),
+    },
+    mutationTarget = document.querySelector('.Bu'),
     observer = new MutationObserver(function(mutations) {
         mutations.forEach(function(mutation) {
             stripInlineStyles();
         });
     });
-observer.observe(mutationTarget, { childList: true });
+
+/* Run on page load */
+stripInlineStyles();
+/* Run when new nodes are inserted in the DOM too (open new message)*/
+observer.observe(mutationTarget, {childList: true});
