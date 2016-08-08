@@ -3,7 +3,7 @@
 // @namespace    http://bd808.com/userscripts/
 // @description  Make gmail look and work like I want it to
 // @match        https://mail.google.com/*
-// @version      0.5.1
+// @version      0.5.2
 // @author       Bryan Davis
 // @license      MIT License; http://opensource.org/licenses/MIT
 // @downloadURL  https://bd808.github.io/userscripts/gmail.user.js
@@ -37,7 +37,6 @@ var stripInlineStyles = function() {
             down(msgBody[i]);
         }
     },
-    mutationTarget = document.querySelector('.Bu'),
     observer = new MutationObserver(function(mutations) {
         mutations.forEach(function(mutation) {
             stripInlineStyles();
@@ -47,4 +46,4 @@ var stripInlineStyles = function() {
 /* Run on page load */
 stripInlineStyles();
 /* Run when new nodes are inserted in the DOM too (open new message)*/
-observer.observe(mutationTarget, {childList: true});
+observer.observe(document.body, {childList: true});
