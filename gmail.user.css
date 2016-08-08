@@ -8,7 +8,8 @@
 .gs .ii,
 textarea.Ak,
 div[aria-label="Message Body"] {
-  font-family:"Source Code Pro",Inconsolata, Consolas, "Deja Vu Sans Mono", "Droid Sans Mono", monospace !important;
+  font-family:"Input Mono","Source Code Pro",Inconsolata, Consolas, "Deja Vu Sans Mono", "Droid Sans Mono", monospace !important;
+  font-size:12px;
 }
 
 /* g+ profile link */
