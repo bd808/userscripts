@@ -25,3 +25,10 @@ div[aria-label="Message Body"] {
 td.Bu.y3 {
   display:none;
 }
+
+/* restore html email blockquote markers */
+blockquote.gmail_quote {
+  border-left:1px solid #ccc;
+  margin-left:.8ex;
+  padding-left:1ex;
+}
