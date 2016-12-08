@@ -15,6 +15,7 @@ body .searchPanel .searchTextBox {
   width:25ch;
 }
 /* squish the dashboard table horizontally */
+/* BUG: this breaks the hell out of the Tags view for a project */
 div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable {
   table-layout:fixed;
   width:100%;
@@ -181,6 +182,11 @@ div.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-text {
 }
 div.com-google-gerrit-client-change-Message_BinderImpl_GenCss_style-header {
   font-family:sans-serif;
+}
+
+/*pretty scrollbar marker in diffs*/
+div.com-google-gerrit-client-diff-Scrollbar-Style-insert {
+  display:none;
 }
 
 /* vim:sw=2:ts=2:sts=2:et: */
