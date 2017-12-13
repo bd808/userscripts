@@ -7,19 +7,22 @@
 // @match        https://bugzillapreview.wmflabs.org/*
 // @match        http://phabricator-striker.wmflabs.org/*
 // @match        https://phabricator-striker.wmflabs.org/*
-// @version      0.35
+// @version      0.36
 // @author       Bryan Davis
 // @license      MiT License; http://opensource.org/licenses/MIT
 // @downloadURL  https://bd808.github.io/userscripts/phabricator.user.js
 // @updateURL    https://bd808.github.io/userscripts/phabricator.user.js
 // @grant        GM_addStyle
 // @grant        GM_getResourceText
-// @resource     css http://bd808.com/userscripts/phabricator.user.css
+// @grant        GM.addStyle
+// @grant        GM.getResourceText
+// @require      https://greasemonkey.github.io/gm4-polyfill/gm4-polyfill.js
+// @resource     css https://bd808.github.io/userscripts/phabricator.user.css
 // @run-at       document-idle
 // ==/UserScript==
 
 /* Load custom css */
-GM_addStyle(GM_getResourceText('css'));
+GM.addStyle(GM.getResourceText('css'));
 
 /* Hide spammy events */
 var hideSpammyEvents = function() {
