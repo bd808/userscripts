@@ -3,7 +3,7 @@
 // @namespace    http://bd808.com/userscripts/
 // @description  Make gerrit look and work like I want it to
 // @match        https://gerrit.wikimedia.org/*
-// @version      2.15
+// @version      2.16
 // @author       Bryan Davis
 // @license      MIT License; http://opensource.org/licenses/MIT
 // @downloadURL  https://bd808.github.io/userscripts/wmfgerrit.user.js
@@ -12,7 +12,8 @@
 // @grant        GM_getResourceText
 // @grant        GM.addStyle
 // @grant        GM.getResourceText
+// @grant        GM.getResourceUrl
 // @require      https://bd808.github.io/gm4-polyfill/gm4-polyfill.js
 // @resource     gerritcss https://bd808.github.io/userscripts/wmfgerrit.user.css
 // ==/UserScript==
-GM.addStyle(GM.getResourceText('gerritcss'));
+GM.getResourceText('gerritcss').then(function(css){GM.addStyle(css);});

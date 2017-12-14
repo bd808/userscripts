@@ -7,7 +7,7 @@
 // @match        https://bugzillapreview.wmflabs.org/*
 // @match        http://phabricator-striker.wmflabs.org/*
 // @match        https://phabricator-striker.wmflabs.org/*
-// @version      0.37
+// @version      0.38
 // @author       Bryan Davis
 // @license      MiT License; http://opensource.org/licenses/MIT
 // @downloadURL  https://bd808.github.io/userscripts/phabricator.user.js
@@ -16,13 +16,14 @@
 // @grant        GM_getResourceText
 // @grant        GM.addStyle
 // @grant        GM.getResourceText
+// @grant        GM.getResourceurl
 // @require      https://bd808.github.io/gm4-polyfill/gm4-polyfill.js
 // @resource     css https://bd808.github.io/userscripts/phabricator.user.css
 // @run-at       document-idle
 // ==/UserScript==
 
 /* Load custom css */
-GM.addStyle(GM.getResourceText('css'));
+GM.getResourceText('css').then(function(css){GM.addStyle(css);});
 
 /* Hide spammy events */
 var hideSpammyEvents = function() {
