@@ -7,7 +7,7 @@
 // @match        https://bugzillapreview.wmflabs.org/*
 // @match        http://phabricator-striker.wmflabs.org/*
 // @match        https://phabricator-striker.wmflabs.org/*
-// @version      0.38
+// @version      0.39
 // @author       Bryan Davis
 // @license      MiT License; http://opensource.org/licenses/MIT
 // @downloadURL  https://bd808.github.io/userscripts/phabricator.user.js
@@ -16,14 +16,25 @@
 // @grant        GM_getResourceText
 // @grant        GM.addStyle
 // @grant        GM.getResourceText
-// @grant        GM.getResourceurl
+// @grant        GM.getResourceUrl
 // @require      https://bd808.github.io/gm4-polyfill/gm4-polyfill.js
 // @resource     css https://bd808.github.io/userscripts/phabricator.user.css
 // @run-at       document-idle
 // ==/UserScript==
 
 /* Load custom css */
-GM.getResourceText('css').then(function(css){GM.addStyle(css);});
+GM.getResourceText('css')
+    .then(function(css){GM.addStyle(css);})
+    .then(function() {
+        "use strict";
+        var sidebarSel = '#phabricator-standard-page-body .phui-side-column',
+            sidebar = document.querySelector(sidebarSel),
+            sbtop = sidebar.getBoundingClientRect().top,
+            headerSel = '#phabricator-standard-page-body .phui-two-column-header',
+            header = document.querySelector(headerSel),
+            htop = header.getBoundingClientRect().top;
+        sidebar.style.marginTop = (htop - sbtop) + "px";
+    });
 
 /* Hide spammy events */
 var hideSpammyEvents = function() {
@@ -121,15 +132,5 @@ observer.observe(mutationTarget, { childList: true });
     }
 })/*()*/;
 
-(function() {
-    "use strict";
-    var sidebarSel = '#phabricator-standard-page-body .phui-side-column',
-        sidebar = document.querySelector(sidebarSel),
-        sbtop = sidebar.getBoundingClientRect().top,
-        headerSel = '#phabricator-standard-page-body .phui-two-column-header',
-        header = document.querySelector(headerSel),
-        htop = header.getBoundingClientRect().top;
-    sidebar.style.marginTop = (htop - sbtop) + "px";
-})();
 
 /* vim:sw=4:ts=4:sts=4:et: */
