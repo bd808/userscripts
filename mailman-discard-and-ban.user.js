@@ -2,9 +2,9 @@
 // @name Mailman discard
 // @namespace http://bd808.com/userscripts/
 // @description Automatically selects "Discard" and ticks the "Add" and "Discards" checkboxes on Mailman admin requests for pending messages
-// @match *://*/mailman/admindb/*
-// @match *://*/lists/admindb/*
-// @version 0.1
+// @match https?://*/mailman/admindb/*
+// @match https?://*/lists/admindb/*
+// @version 0.2
 // @author Bryan Davis
 // @license MIT License; http://opensource.org/licenses/MIT
 // @downloadURL https://bd808.github.io/userscripts/mailman-discard-and-ban.user.js
