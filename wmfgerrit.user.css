@@ -15,7 +15,6 @@ body .searchPanel .searchTextBox {
   width:25ch;
 }
 /* squish the dashboard table horizontally */
-/* BUG: this breaks the hell out of the Tags view for a project */
 div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable {
   table-layout:fixed;
   width:100%;
@@ -31,21 +30,21 @@ div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable td
   width:20px;
 }
 div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable td:nth-child(5) /*status*/,
-div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable td:nth-child(10) /*size*/{
+div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable td:nth-child(11) /*size*/{
   display:none;
 }
 div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable td:nth-child(6) /*owner*/,
-div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable td:nth-child(7) /*project*/,
-div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable td:nth-child(8) /*branch*/,
-div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable td:nth-child(9) /*updated*/,
-div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable td:nth-child(11) /*CR*/
+div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable td:nth-child(8) /*project*/,
+div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable td:nth-child(9) /*branch*/,
+div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable td:nth-child(10) /*updated*/,
+div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable td:nth-child(12) /*CR*/
 {
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
   width:15ch;
 }
-div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable td:nth-child(12) /*V*/ {
+div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable td:nth-child(13) /*V*/ {
   width:20px;
 }
 div#gerrit_body.gerritBody > div > div > div.screen > div > table.changeTable .cOWNER,
