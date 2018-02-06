@@ -2,7 +2,7 @@
 // @name         slashdot hacks
 // @namespace    http://bd808.com/userscripts
 // @description  Make slashdot look and work like I want it to
-// @match        http://slashdot.org/*
+// @match        *://slashdot.org/*
 // @version      0.4
 // @author       Bryan Davis
 // @license      MiT License; http://opensource.org/licenses/MIT
