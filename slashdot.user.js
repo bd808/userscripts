@@ -3,7 +3,7 @@
 // @namespace    http://bd808.com/userscripts
 // @description  Make slashdot look and work like I want it to
 // @match        https?://slashdot.org/*
-// @version      0.4
+// @version      0.5
 // @author       Bryan Davis
 // @license      MiT License; http://opensource.org/licenses/MIT
 // @downloadURL  https://bd808.github.io/userscripts/slashdot.user.js
