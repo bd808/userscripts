@@ -1,0 +1,10 @@
+/*!
+ * bd808's gcal css hacks
+ * © 2018 Bryan Davis and contributors
+ * License: http://opensource.org/licenses/MIT
+ */
+
+body {
+  padding-right:1em; /* make it possible to hit task drawer pull */
+}
+
