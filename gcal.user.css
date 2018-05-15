@@ -3,8 +3,7 @@
  * © 2018 Bryan Davis and contributors
  * License: http://opensource.org/licenses/MIT
  */
-
-body {
-  padding-right:1em; /* make it possible to hit task drawer pull */
+/*logo+menu padding*/
+div.gb_Wd {
+  min-width:inherit !important;
 }
-
