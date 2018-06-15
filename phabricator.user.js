@@ -7,7 +7,7 @@
 // @match        https://bugzillapreview.wmflabs.org/*
 // @match        http://phabricator-striker.wmflabs.org/*
 // @match        https://phabricator-striker.wmflabs.org/*
-// @version      0.39
+// @version      0.40
 // @author       Bryan Davis
 // @license      MiT License; http://opensource.org/licenses/MIT
 // @downloadURL  https://bd808.github.io/userscripts/phabricator.user.js

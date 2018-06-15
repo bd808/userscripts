@@ -204,6 +204,9 @@ body.phui-workboard-color .phabricator-side-menu .phui-profile-menu-footer-1 {
     float:none;
     margin:5px 0 0;
 }
+.phui-object-box .phui-box.phui-feed-story {
+    word-break:break-all;
+}
 
 /* custom ui */
 .phabricator-notification-header .phabricator-notification-unread {
