@@ -1,15 +1,17 @@
 /*!
  * bd808's gmail css hacks
- * © 2016 Bryan Davis and contributors
+ * © 2018 Bryan Davis and contributors
  * License: http://opensource.org/licenses/MIT
  */
 
 /* Fixed width font for message bodies and composition */
 .gs .ii,
 textarea.Ak,
-div[aria-label="Message Body"] {
+div[aria-label="Message Body"],
+.a3s,
+.g6 {
   font-family:"Input Mono","Source Code Pro",Inconsolata, Consolas, "Deja Vu Sans Mono", "Droid Sans Mono", monospace !important;
-  font-size:12px;
+  font-size:12px !important;
 }
 
 /* g+ profile link */
@@ -31,4 +33,28 @@ blockquote.gmail_quote {
   border-left:1px solid #ccc;
   margin-left:.8ex;
   padding-left:1ex;
+}
+
+/* squish sidebar */
+div.aeN {
+    min-width:180px !important;
+}
+/* hide folder icons in left nav */
+html body .qj {
+    display:none;
+}
+/* compose button */
+.z0 > .L3 { height: 32px; }
+.z0 { margin: 0; }
+/* Shrink the rows inside the sidebar */
+html body .wT { max-width: 184px; min-width: 184px; }
+/* Why mess with the letter spacing? */
+html body .zA > .a4W { letter-spacing: inherit; }
+
+.TO .nU > .n0,
+.TO.NQ .nU > .n0,
+.TO.nZ .nU > .n0,
+.ah9 > .CJ,
+.n3 > .CL > .CK {
+    font-size:12px;
 }
