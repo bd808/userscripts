@@ -12,6 +12,7 @@ div[aria-label="Message Body"],
 .g6 {
   font-family:"Input Mono","Source Code Pro",Inconsolata, Consolas, "Deja Vu Sans Mono", "Droid Sans Mono", monospace !important;
   font-size:12px !important;
+  line-height: normal !important;
 }
 
 /* g+ profile link */
