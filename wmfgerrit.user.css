@@ -137,12 +137,12 @@ table.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-label
 .com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-label_need,
 .com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-label_need + td {
   background-color:#f0f000;
-  color:#000;
+  color:#000 !important;
 }
 .com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-label_reject,
 .com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-label_reject + td {
   background-color:#f00000;
-  color:#000;
+  color:#000 !important;
 }
 .com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-label_user {
   color:#333;
