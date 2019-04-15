@@ -4,6 +4,10 @@
  * License: http://opensource.org/licenses/MIT
  */
 
+body {
+  padding-right:10px; /*space for scrollbars*/
+}
+
 /* hide the Wikimedia logo and shift menu to the left */
 body #gerrit_topmenu {
   position:inherit;
@@ -186,6 +190,10 @@ div.com-google-gerrit-client-change-Message_BinderImpl_GenCss_style-header {
 /*pretty scrollbar marker in diffs*/
 div.com-google-gerrit-client-diff-Scrollbar-Style-insert {
   display:none;
+}
+
+div.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-star {
+  right:15px;
 }
 
 /* vim:sw=2:ts=2:sts=2:et: */
