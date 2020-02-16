@@ -3,7 +3,7 @@
 // @namespace    http://bd808.com/userscripts/
 // @description  Don't use this unless you are bd808!
 // @match        *://etherpad.wikimedia.org/p/*
-// @version      0.4
+// @version      0.5
 // @author       Bryan Davis
 // @license      MIT License; http://opensource.org/licenses/MIT
 // @downloadURL  https://bd808.github.io/userscripts/etherpad.user.js
@@ -12,6 +12,15 @@
 // @run-at document-end
 // ==/UserScript==
 (function() {
-    pad.notifyChangeColor('#fdf6e3');
-    pad.notifyChangeName('bd808');
+    "use strict";
+    var interval = window.setInterval(
+        function() {
+            if (window.hasOwnProperty("pad")) {
+                pad.notifyChangeColor('#fdf6e3');
+                pad.notifyChangeName('bd808');
+                window.clearInterval(interval);
+            }
+        },
+        500
+    );
 })();
