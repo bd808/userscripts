@@ -3,18 +3,18 @@
 // @namespace    http://bd808.com/userscripts/
 // @description  Make gmail look and work like I want it to
 // @match        https://mail.google.com/*
-// @version      0.11
+// @version      0.11.1
 // @author       Bryan Davis
 // @license      MIT License; http://opensource.org/licenses/MIT
-// @downloadURL  https://bd808.github.io/userscripts/gmail.user.js
-// @updateURL    https://bd808.github.io/userscripts/gmail.user.js
+// @downloadURL  https://bd808.com/userscripts/gmail.user.js
+// @updateURL    https://bd808.com/userscripts/gmail.user.js
 // @grant        GM_addStyle
 // @grant        GM_getResourceText
 // @grant        GM.addStyle
 // @grant        GM.getResourceText
 // @grant        GM.getResourceUrl
-// @require      https://bd808.github.io/gm4-polyfill/gm4-polyfill.js
-// @resource     gmailcss https://bd808.github.io/userscripts/gmail.user.css
+// @require      https://bd808.com/gm4-polyfill/gm4-polyfill.js
+// @resource     gmailcss https://bd808.com/userscripts/gmail.user.css
 // ==/UserScript==
 GM.getResourceText('gmailcss').then(function(css){GM.addStyle(css);});
 
