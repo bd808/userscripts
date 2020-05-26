@@ -30,6 +30,7 @@
 
 */
 function waitForKeyElements (
+    documentNode,   /* Required: document to operate on */
     selectorTxt,    /* Required: The querySelector string that
                         specifies the desired element(s).
                     */
@@ -50,10 +51,10 @@ function waitForKeyElements (
     var selectorClean = selectorTxt.replace(/(,)|$/g, ":not([wfke_found])$1");
 
     if (typeof iframeSelector == "undefined")
-        targetNodes     = document.querySelectorAll(selectorClean);
+        targetNodes     = documentNode.querySelectorAll(selectorClean);
     else {
         targetNodes = [];
-        var iframe = document.querySelectorAll(iframeSelector);
+        var iframe = documentNode.querySelectorAll(iframeSelector);
         for (var i = 0, il = iframe.length; i < il; i++) {
             var nodes = iframe[i].querySelectorAll(selectorClean);
             if (nodes) targetNodes.concat(Array.from(nodes));
