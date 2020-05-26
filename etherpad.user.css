@@ -3,8 +3,8 @@
  * © 2018 Bryan Davis and contributors
  * License: http://opensource.org/licenses/MIT
  */
-.super-light-editor #outerdocbody iframe,
-.super-light-editor #outerdocbody > #innerdocbody {
+html.super-light-editor #outerdocbody iframe,
+html.super-light-editor #outerdocbody > #innerdocbody {
   max-width: 100% !important;
   padding: 1em;
   line-height: 1em;
