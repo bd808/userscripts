@@ -3,7 +3,7 @@
 // @namespace    http://bd808.com/userscripts/
 // @description  Don't use this unless you are bd808!
 // @match        https://etherpad.wikimedia.org/p/*
-// @version      0.6.1
+// @version      0.7
 // @author       Bryan Davis
 // @license      MIT License; http://opensource.org/licenses/MIT
 // @downloadURL  https://bd808.com/userscripts/etherpad.user.js
