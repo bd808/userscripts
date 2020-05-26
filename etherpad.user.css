@@ -1,0 +1,15 @@
+/*!
+ * bd808's etherpad css hacks
+ * © 2018 Bryan Davis and contributors
+ * License: http://opensource.org/licenses/MIT
+ */
+#outerdocbody iframe, #outerdocbody > #innerdocbody {
+  max-width: 100% !important;
+}
+#outerdocbody iframe, #outerdocbody > #innerdocbody {
+  padding: 1em;
+}
+#innerdocbody {
+  line-height: 1em;
+  font-size: 14px;
+}
