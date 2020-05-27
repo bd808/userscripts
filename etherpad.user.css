@@ -11,3 +11,7 @@
   line-height: 1.5em;
   font-size: 14px;
 }
+.super-light-editor #innerdocbody span {
+    line-height: inherit;
+    padding: 0 !important;
+}

@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         etherpad personal settings
+// @name         etherpad style tweaks
 // @namespace    http://bd808.com/userscripts/
-// @description  Don't use this unless you are bd808!
+// @description  Less whitespace in etherpad-lite
 // @match        https://etherpad.wikimedia.org/p/*
-// @version      0.9.1
+// @version      0.9.2
 // @author       Bryan Davis
 // @license      MIT License; http://opensource.org/licenses/MIT
 // @downloadURL  https://bd808.com/userscripts/etherpad.user.js
@@ -49,18 +49,3 @@ GM.getResourceText("css").then(function (css) {
     addStyle(document);
     waitForKeyElements(document, frameSelector, updateFrame, false);
 });
-
-/* Try to set pad username and color */
-(function() {
-    "use strict";
-    var interval = window.setInterval(
-        function() {
-            if (window.hasOwnProperty("pad")) {
-                pad.notifyChangeColor("#fdf6e3");
-                pad.notifyChangeName("bd808");
-                window.clearInterval(interval);
-            }
-        },
-        500
-    );
-})();
