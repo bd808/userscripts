@@ -106,7 +106,8 @@ function waitForKeyElements (
         //--- Set a timer, if needed.
         if ( ! timeControl) {
             timeControl = setInterval ( function () {
-                    waitForKeyElements (    selectorTxt,
+                    waitForKeyElements (    documentNode,
+                                            selectorTxt,
                                             actionFunction,
                                             bWaitOnce,
                                             iframeSelector

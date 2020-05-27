@@ -3,7 +3,7 @@
 // @namespace    http://bd808.com/userscripts/
 // @description  Don't use this unless you are bd808!
 // @match        https://etherpad.wikimedia.org/p/*
-// @version      0.9
+// @version      0.9.1
 // @author       Bryan Davis
 // @license      MIT License; http://opensource.org/licenses/MIT
 // @downloadURL  https://bd808.com/userscripts/etherpad.user.js
@@ -30,19 +30,24 @@ GM.getResourceText("css").then(function (css) {
             $style.textContent = css;
             doc.getElementsByTagName("head")[0].appendChild($style);
         },
+        frameSelector = "frame, iframe",
         updateFrame = function (elem) {
-            elem.removeAttribute("wfke_found");
-            for (let f=0; f < frames.length; f++) {
-                let doc = frames[f].document;
-                if (!doc.body.getAttribute("been_there")) {
-                    addStyle(doc);
-                    doc.body.setAttribute("been_there", 1);
-                    waitForKeyElements(doc, "iframe, frame", updateFrame, false);
+            var doc = elem.contentWindow.document,
+                frameList = doc.querySelectorAll(frameSelector);
+            doc.body.removeAttribute("wfke_found");
+            addStyle(doc);
+            doc.body.setAttribute("been_there", 1);
+            frameList.forEach(function (frame) {
+                let fdoc = frame.contentWindow.document;
+                if (!fdoc.body.getAttribute("been_there")) {
+                    addStyle(fdoc);
+                    fdoc.body.setAttribute("been_there", 1);
+                    waitForKeyElements(fdoc, frameSelector, updateFrame, false);
                 }
-            }
+            });
         };
-    updateFrame(document);
-    waitForKeyElements(document, "iframe, frame", updateFrame, false);
+    addStyle(document);
+    waitForKeyElements(document, frameSelector, updateFrame, false);
 });
 
 /* Try to set pad username and color */
