@@ -1,13 +1,44 @@
 /*
  * bd808's WMF gerrit css hacks
- * © 2016 Bryan Davis and contributors
+ * © 2020 Bryan Davis and contributors
  * License: http://opensource.org/licenses/MIT
  */
-
 body {
   padding-right:10px; /*space for scrollbars*/
 }
+/* == Gerrit 3.x == */
+/* Hide site name */
+.titleText::after {
+  content:"";
+}
+/* Commit message on left */
+#mainContent .changeInfoSection .changeInfo {
+  flex-direction:row-reverse;
+}
+/* Border between commit message and metadata */
+.changeMetadata {
+  border-left:1px solid #000;
+}
+/* Actions to the right */
+#replyBtn {
+  float:right;
+}
+.editCommitMessage {
+  float:right;
+  margin:0;
+}
+/* Reduce vertical whitespace */
+.commitContainer,
+#commitMessage {
+  margin-bottom:0;
+}
+/* Compact list views */
+gr-change-list #changeList {
+  font-size:.9em;
+  /*TODO: table-layout:fixed; */
+}
 
+/* == Gerrit 2.x == */
 /* hide the Wikimedia logo and shift menu to the left */
 body #gerrit_topmenu {
   position:inherit;
