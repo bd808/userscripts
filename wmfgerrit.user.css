@@ -8,7 +8,7 @@ body {
 }
 /* == Gerrit 3.x == */
 /* Hide site name */
-.titleText::after {
+nav .titleText::after {
   content:"";
 }
 /* Commit message on left */
