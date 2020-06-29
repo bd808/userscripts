@@ -8,8 +8,11 @@ body {
 }
 /* == Gerrit 3.x == */
 /* Hide site name */
+html {
+  --header-title-content: "" !important;
+}
 nav .titleText::after {
-  content:"";
+  content:"" !important;
 }
 /* Commit message on left */
 #mainContent .changeInfoSection .changeInfo {
