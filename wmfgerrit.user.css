@@ -1,4 +1,4 @@
-/*
+/*!
  * bd808's WMF gerrit css hacks
  * © 2020 Bryan Davis and contributors
  * License: http://opensource.org/licenses/MIT
@@ -7,12 +7,12 @@ body {
   padding-right:10px; /*space for scrollbars*/
 }
 /* == Gerrit 3.x == */
-/* Hide site name */
 html {
-  --header-title-content: "" !important;
-}
-nav .titleText::after {
-  content:"" !important;
+  /* Hide site name */
+  --header-title-content:"" !important;
+  /* Code font */
+  --monospace-font-family:"Source Code Pro", monospace !important;
+  --font-size-mono:12px;
 }
 /* Commit message on left */
 #mainContent .changeInfoSection .changeInfo {
@@ -20,7 +20,7 @@ nav .titleText::after {
 }
 /* Border between commit message and metadata */
 .changeMetadata {
-  border-left:1px solid #000;
+  border-left:1px solid var(--text-primary-color);
 }
 /* Actions to the right */
 #replyBtn {
