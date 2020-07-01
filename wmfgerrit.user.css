@@ -20,7 +20,7 @@ html {
 }
 /* Border between commit message and metadata */
 .changeMetadata {
-  border-left:1px solid var(--text-primary-color);
+  border-left:1px solid var(--primary-text-color);
 }
 /* Actions to the right */
 #replyBtn {
@@ -36,9 +36,26 @@ html {
   margin-bottom:0;
 }
 /* Compact list views */
-gr-change-list #changeList {
+#changeList {
   font-size:.9em;
-  /*TODO: table-layout:fixed; */
+}
+td.owner,
+td.project,
+td.branch,
+td.updated,
+td.label {
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  width:15ch;
+}
+td.label {
+  width:20px;
+}
+td.owner,
+td.status,
+td.updated {
+  white-space:normal;
 }
 
 /* == Gerrit 2.x == */
