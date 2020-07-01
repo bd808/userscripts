@@ -34,7 +34,7 @@ GM.getResourceText("css").then(function (css) {
         updateFrame = function (elem) {
             var doc = elem.contentWindow.document,
                 frameList = doc.querySelectorAll(frameSelector);
-            doc.body.removeAttribute("wfke_found");
+            doc.body.removeAttribute("data-wfke-found");
             addStyle(doc);
             doc.body.setAttribute("been_there", 1);
             frameList.forEach(function (frame) {

@@ -48,7 +48,7 @@ function waitForKeyElements (
     var targetNodes, btargetsFound;
 
     //--- Additionally avoid what we've found
-    var selectorClean = selectorTxt.replace(/(,)|$/g, ":not([wfke_found])$1");
+    var selectorClean = selectorTxt.replace(/(,)|$/g, ":not([data-wfke-found])$1");
 
     if (typeof iframeSelector == "undefined")
         targetNodes     = documentNode.querySelectorAll(selectorClean);
@@ -66,7 +66,7 @@ function waitForKeyElements (
         //--- Found target node(s).  Go through each and act if they are new.
         for (var t = 0, tl = targetNodes.length; t < tl; t++) {
 
-            if (!targetNodes[t].getAttribute("wfke_found")) {
+            if (!targetNodes[t].getAttribute("data-wfke-found")) {
                 //--- Call the payload function.
                 var cancelFound = false;
                 try {
@@ -83,7 +83,7 @@ function waitForKeyElements (
                 if (cancelFound)
                     btargetsFound   = false;
                 else
-                    targetNodes[t].setAttribute("wfke_found", true);
+                    targetNodes[t].setAttribute("data-wfke-found", true);
             }
         }
     }
