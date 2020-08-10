@@ -214,3 +214,8 @@ body.phui-workboard-color .phabricator-side-menu .phui-profile-menu-footer-1 {
   float:right;
   font-weight:normal;
 }
+
+.bd808-active-hash .phui-timeline-content {
+    border-width:.5em;
+    border-color:red;
+}
