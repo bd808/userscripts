@@ -7,7 +7,7 @@
 // @match        https://bugzillapreview.wmflabs.org/*
 // @match        http://phabricator-striker.wmflabs.org/*
 // @match        https://phabricator-striker.wmflabs.org/*
-// @version      20200810.04
+// @version      20200811.02
 // @author       Bryan Davis
 // @license      MiT License; http://opensource.org/licenses/MIT
 // @downloadURL  https://bd808.com/userscripts/phabricator.user.js
@@ -37,18 +37,28 @@ GM.getResourceText('css')
     });
 
 /* Hide spammy events */
-var scrollAndHighlight = function(event) {
+var ignoreHashChange = false,
+    scrollAndHighlight = function(event) {
         "use strict";
+        if (ignoreHashChange) {
+            return;
+        }
         var activeClass = "bd808-active-hash",
-            hash = location.hash,
-            hashTarget = document.querySelector("#anchor-" + hash.substring(1)),
+            newHash = location.hash,
+            oldHash = event ? (new URL(event.oldURL)).hash : "",
+            hashTarget = document.querySelector(
+                "#anchor-" + newHash.substring(1)
+            ),
             active = document.getElementsByClassName(activeClass);
         for (var i = 0; i < active.length; i++) {
             active[i].classList.remove(activeClass);
         }
-        if (hash) {
+        if (newHash) {
             hashTarget.classList.add(activeClass);
-            hashTarget.scrollIntoView();
+            ignoreHashChange = true;
+            location.hash = "";
+            location.hash = newHash;
+            window.setTimeout(function() {ignoreHashChange = false;}, 500);
         }
     },
     hideSpammyEvents = function() {
