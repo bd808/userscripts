@@ -18,6 +18,10 @@ html {
 #mainContent .changeInfoSection .changeInfo {
   flex-direction:row-reverse;
 }
+/* 80char commit message */
+#commitMessage {
+  max-width: calc(80ch + 2px + 2 * var(--spacing-m) + 0.4px);
+}
 /* Border between commit message and metadata */
 .changeMetadata {
   border-left:1px solid var(--primary-text-color);
