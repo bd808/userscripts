@@ -1,0 +1,8 @@
+/*!
+ * bd808's pheedloop css hacks
+ * © 2021 Bryan Davis and contributors
+ * License: http://opensource.org/licenses/MIT
+ */
+#header #adblock-banner {
+  display: none !important;
+}
