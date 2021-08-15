@@ -1,0 +1,4 @@
+/* hide "watch next" content */
+#items.ytd-watch-next-secondary-results-renderer {
+  display: none;
+}
