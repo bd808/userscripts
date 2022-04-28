@@ -1,6 +1,6 @@
 /*!
  * bd808's WMF gerrit css hacks
- * © 2020 Bryan Davis and contributors
+ * © 2022 Bryan Davis and contributors
  * License: http://opensource.org/licenses/MIT
  */
 body {
@@ -60,6 +60,11 @@ td.owner,
 td.status,
 td.updated {
   white-space:normal;
+}
+
+/* hide gravatars */
+gr-avatar {
+  display:none;
 }
 
 /* == Gerrit 2.x == */
