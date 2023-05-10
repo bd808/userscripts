@@ -21,6 +21,11 @@
   margin-right:3px !important;
 }
 
+/* squish breadcrumbs horizontally */
+.phui-crumb-divider {
+    margin:2px 4px !important;
+}
+
 /* tiny tags on cards */
 .phui-workcard .phabricator-handle-tag-list .phui-tag-shade-slim .phui-tag.core {
   font-size:8px !important;
