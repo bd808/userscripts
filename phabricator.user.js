@@ -2,12 +2,13 @@
 // @name         phabricator hacks
 // @namespace    http://bd808.com/userscripts/
 // @description  Make phabricator look and work like I want it to
+// @match        https://we.phorge.it/*
 // @match        https://secure.phabricator.com/*
 // @match        https://phabricator.wikimedia.org/*
 // @match        https://bugzillapreview.wmflabs.org/*
 // @match        http://phabricator-striker.wmflabs.org/*
 // @match        https://phabricator-striker.wmflabs.org/*
-// @version      20230510.01
+// @version      20230824.01
 // @author       Bryan Davis
 // @license      MiT License; http://opensource.org/licenses/MIT
 // @downloadURL  https://bd808.com/userscripts/phabricator.user.js
