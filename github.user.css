@@ -15,8 +15,6 @@
 }
 /* borrowed from
  * https://git.sr.ht/~toastal/github-less-social/tree/trunk/item/styles.css */
-.avatar,
-.avatar-user,
 .filter-item,
 .social-reaction-summary-item .social-button-emoji,
 [id^="sponsor-"],
@@ -25,9 +23,6 @@
     transition-duration: 200ms;
     transition-timing-function: ease-out;
 }
-:is(.avatar,
-.avatar-user,
-.filter-item):not(:hover, :focus),
 .social-reaction-summary-item:not(:hover, :focus) .social-button-emoji {
     filter: grayscale(1.0) brightness(1.125) contrast(1.075);
 }
