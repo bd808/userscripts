@@ -1,6 +1,6 @@
 /*!
  * bd808's github css hacks
- * © 2015 Bryan Davis and contributors
+ * © 2023 Bryan Davis and contributors
  * License: http://opensource.org/licenses/MIT
  */
 
@@ -12,4 +12,36 @@
 .has-rightbar #wiki-body,
 .has-rightbar #wiki-footer {
   margin-right: 20px;
+}
+/* borrowed from
+ * https://git.sr.ht/~toastal/github-less-social/tree/trunk/item/styles.css */
+.avatar,
+.avatar-user,
+.filter-item,
+.social-reaction-summary-item .social-button-emoji,
+[id^="sponsor-"],
+[href^="/sponsors/"] {
+    transition-property: filter, opacity;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+}
+:is(.avatar,
+.avatar-user,
+.filter-item):not(:hover, :focus),
+.social-reaction-summary-item:not(:hover, :focus) .social-button-emoji {
+    filter: grayscale(1.0) brightness(1.125) contrast(1.075);
+}
+:is([id^="sponsor-"], [href^="/sponsors/"]):not(:hover, :focus) {
+    opacity: 0.75;
+}
+.starring-container,
+.js-social-container,
+.Header :is(a[href="/codespaces"], a[href="/explore"], a[href="/marketplace"]) {
+    opacity: 0.5;
+}
+[data-target="get-repo.modal"] :is(.tabnav-tabs li:has([data-tab="cloud"]), .cloud-panel) {
+    opacity: 0.25;
+    cursor: not-allowed;
+    pointer-events: none;
+    user-select: none;
 }

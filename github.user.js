@@ -3,7 +3,7 @@
 // @namespace    http://bd808.com/userscripts/
 // @description  Make github look and work like I want it to
 // @match        https://github.com/*
-// @version      0.5
+// @version      20230829.01
 // @author       Bryan Davis
 // @license      MiT License; http://opensource.org/licenses/MIT
 // @downloadURL  https://bd808.com/userscripts/github.user.js
