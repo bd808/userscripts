@@ -224,3 +224,267 @@ body.phui-workboard-color .phabricator-side-menu .phui-profile-menu-footer-1 {
     border-width:.5em;
     border-color:red;
 }
+
+/***********************************************************************
+ * Reduce Gerritbot comments.
+ * <https://userstyles.world/style/13140/wikimedia-phabricator-reduce-gerritbot-comments>
+ * @author https://userstyles.world/user/MatmaRex
+ * @license MIT
+ */
+/* Turn Gerritbot's avatar into timeline icon */
+.phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] {
+    background-position: center;
+    left: 5px;
+    width: 26px;
+    height: 26px;
+    background-color: #f3f5f7;
+    top: 50%;
+    margin-top: -13px;
+}
+
+/* Hide the title "gerritbot added a comment" */
+.phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-wedge {
+    display: none;
+}
+
+.phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-group .phui-timeline-menu {
+    top: 2px;
+    display: none;
+}
+
+.phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-group .phui-timeline-title {
+    height: 0;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+
+    visibility: hidden;
+    overflow: visible;
+    z-index: 1;
+}
+
+/* Reposition the timestamp */
+.phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-group .phui-timeline-title .phui-timeline-extra {
+    float: right;
+    visibility: visible;
+    padding-right: 8px;
+    margin-top: -4px;
+    margin-bottom: -2px;
+    padding-left: 8px;
+}
+
+/* Hide box background and border, and match the timeline drawing */
+.phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-group .phui-timeline-inner-content {
+    background: #f3f5f7;
+    color: #4B4D51;
+    border: 0;
+    margin: -1px;
+    padding: 0;
+    padding-left: 38px;
+
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWO4euPhfwAIogOOtIE7lQAAAABJRU5ErkJggg==);
+    background-repeat: repeat-y;
+    background-position: 18px;
+}
+
+.device .phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] {
+    display: block;
+    left: 3px;
+}
+.device .phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-group .phui-timeline-inner-content {
+    background-position: 16px;
+}
+
+.phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-group .phui-timeline-core-content {
+    background: #f3f5f7;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: max-content;
+    max-width: 100%;
+    overflow: visible;
+}
+
+.phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-group .phui-timeline-core-content p {
+    margin: 0;
+}
+
+/* Hide the visible link, instead make the whole item into a clickable link */
+/* (This has an annoying side-effect - since the link now covers the text, you
+ * can't select the text with the mouse any more. I couldn't find a workaround
+ * for that.)
+ */
+.phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-group .phui-timeline-core-content .transaction-comment {
+    display: block;
+    margin-top: -4px;
+    position: relative;
+}
+
+.phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-group .phui-timeline-core-content .transaction-comment:hover {
+    color: #136CB2;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-group .remarkup-link {
+    color: transparent;
+    user-select: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-group .phui-timeline-menu {
+    border-left: 0;
+}
+
+/* Change timeline icon (formerly avatar) colors */
+/* Presumably new patch */
+.phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-group .phui-timeline-core-content .transaction-comment p:first-child:before {
+    pointer-events: none;
+    content: '';
+    display: block;
+    width: 30px;
+    height: 36px;
+    position: absolute;
+    left: -36px;
+    top: 50%;
+    margin-top: -18px;
+    backdrop-filter: saturate(150%) hue-rotate(80deg); /* blue, and make all icons brighter */
+}
+/* A <strong> tag indicates a merge comment */
+.phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-group .phui-timeline-core-content .transaction-comment strong:before {
+    pointer-events: none;
+    content: '';
+    display: block;
+    width: 30px;
+    height: 36px;
+    position: absolute;
+    left: -36px;
+    top: 50%;
+    margin-top: -18px;
+    backdrop-filter: hue-rotate(-80deg); /* restore green */
+}
+/* 2x .remarkup-literal indicates an abandon comment */
+.phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-group .phui-timeline-core-content .transaction-comment .remarkup-literal ~ .remarkup-literal:before {
+    pointer-events: none;
+    content: '';
+    display: block;
+    width: 30px;
+    height: 36px;
+    position: absolute;
+    left: -36px;
+    top: 50%;
+    margin-top: -18px;
+    backdrop-filter: hue-rotate(200deg); /* red */
+}
+
+/* Hide #Patch-for-review added */
+.phui-timeline-minor-event a.phui-timeline-image[href="/p/gerritbot/"],
+.phui-timeline-minor-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-wedge {
+    display: none;
+}
+
+.phui-timeline-minor-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-group {
+    height: 0;
+    visibility: hidden;
+    pointer-events: none;
+    margin-top: -16px;
+}
+/**********************************************************************/
+
+/***********************************************************************
+ * Do most of the gerritbot hacks for CodeReviewBot too.
+ */
+/* Turn CodeReviewBot's avatar into timeline icon */
+.phui-timeline-major-event a.phui-timeline-image[href="/p/CodeReviewBot/"] {
+    background-position: center;
+    left: 5px;
+    width: 26px;
+    height: 26px;
+    background-color: #f3f5f7;
+    top: 50%;
+    margin-top: -13px;
+}
+
+/* Hide the title "CodeReviewBot added a comment" */
+.phui-timeline-major-event a.phui-timeline-image[href="/p/CodeReviewBot/"] ~ .phui-timeline-wedge {
+    display: none;
+}
+
+.phui-timeline-major-event a.phui-timeline-image[href="/p/CodeReviewBot/"] ~ .phui-timeline-group .phui-timeline-menu {
+    top: 2px;
+    display: none;
+}
+
+.phui-timeline-major-event a.phui-timeline-image[href="/p/CodeReviewBot/"] ~ .phui-timeline-group .phui-timeline-title {
+    height: 0;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+
+    visibility: hidden;
+    overflow: visible;
+    z-index: 1;
+}
+
+/* Reposition the timestamp */
+.phui-timeline-major-event a.phui-timeline-image[href="/p/CodeReviewBot/"] ~ .phui-timeline-group .phui-timeline-title .phui-timeline-extra {
+    float: right;
+    visibility: visible;
+    padding-right: 8px;
+    margin-top: -4px;
+    margin-bottom: -2px;
+    padding-left: 8px;
+}
+
+/* Hide box background and border, and match the timeline drawing */
+.phui-timeline-major-event a.phui-timeline-image[href="/p/CodeReviewBot/"] ~ .phui-timeline-group .phui-timeline-inner-content {
+    background: #f3f5f7;
+    color: #4B4D51;
+    border: 0;
+    margin: -1px;
+    padding: 0;
+    padding-left: 38px;
+
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWO4euPhfwAIogOOtIE7lQAAAABJRU5ErkJggg==);
+    background-repeat: repeat-y;
+    background-position: 18px;
+}
+
+.device .phui-timeline-major-event a.phui-timeline-image[href="/p/CodeReviewBot/"] {
+    display: block;
+    left: 3px;
+}
+.device .phui-timeline-major-event a.phui-timeline-image[href="/p/CodeReviewBot/"] ~ .phui-timeline-group .phui-timeline-inner-content {
+    background-position: 16px;
+}
+
+.phui-timeline-major-event a.phui-timeline-image[href="/p/CodeReviewBot/"] ~ .phui-timeline-group .phui-timeline-core-content {
+    background: #f3f5f7;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: max-content;
+    max-width: 100%;
+    overflow: visible;
+}
+
+.phui-timeline-major-event a.phui-timeline-image[href="/p/CodeReviewBot/"] ~ .phui-timeline-group .phui-timeline-core-content p {
+    margin: 0;
+}
+
+/* Hide #Patch-for-review added */
+.phui-timeline-minor-event a.phui-timeline-image[href="/p/CodeReviewBot/"],
+.phui-timeline-minor-event a.phui-timeline-image[href="/p/CodeReviewBot/"] ~ .phui-timeline-wedge {
+    display: none;
+}
+
+.phui-timeline-minor-event a.phui-timeline-image[href="/p/CodeReviewBot/"] ~ .phui-timeline-group {
+    height: 0;
+    visibility: hidden;
+    pointer-events: none;
+    margin-top: -16px;
+}
