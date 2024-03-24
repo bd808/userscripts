@@ -8,7 +8,7 @@
 // @match        https://bugzillapreview.wmflabs.org/*
 // @match        http://phabricator-striker.wmflabs.org/*
 // @match        https://phabricator-striker.wmflabs.org/*
-// @version      20231129.01
+// @version      20240323.01
 // @author       Bryan Davis
 // @license      MiT License; http://opensource.org/licenses/MIT
 // @downloadURL  https://bd808.com/userscripts/phabricator.user.js
@@ -66,7 +66,7 @@ var ignoreHashChange = false,
         "use strict";
         var nodes = document.querySelectorAll('.phui-timeline-minor-event'),
             nodesLen = nodes.length,
-            spam = /(added|removed) (a )?(subscriber|project)|(changed|set) Security (from|to)|moved this task to|awarded a token|(raised|lowered) the priority of this task|triaged this task as|changed the title from/;
+            spam = /(added|removed) (a )?(subscriber|project)|subscribed|(changed|set) Security (from|to)|(created|moved) this task|awarded a token|(raised|lowered) the priority of this task|triaged this task as|changed the title from/;
         for (var nodeIdx = 0; nodeIdx < nodesLen; nodeIdx++) {
             var kids = nodes[nodeIdx].querySelectorAll('.phui-timeline-title'),
                 kidsLen = kids.length,
