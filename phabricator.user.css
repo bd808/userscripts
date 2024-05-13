@@ -488,3 +488,97 @@ body.phui-workboard-color .phabricator-side-menu .phui-profile-menu-footer-1 {
     pointer-events: none;
     margin-top: -16px;
 }
+
+/***********************************************************************
+ * Do most of the gerritbot hacks for Stashbot too.
+ */
+/* Turn Stashbot's avatar into timeline icon */
+.phui-timeline-major-event a.phui-timeline-image[href="/p/Stashbot/"] {
+    background-position: center;
+    left: 5px;
+    width: 26px;
+    height: 26px;
+    background-color: #f3f5f7;
+    top: 50%;
+    margin-top: -13px;
+}
+
+/* Hide the title "Stashbot added a comment" */
+.phui-timeline-major-event a.phui-timeline-image[href="/p/Stashbot/"] ~ .phui-timeline-wedge {
+    display: none;
+}
+
+.phui-timeline-major-event a.phui-timeline-image[href="/p/Stashbot/"] ~ .phui-timeline-group .phui-timeline-menu {
+    top: 2px;
+    display: none;
+}
+
+.phui-timeline-major-event a.phui-timeline-image[href="/p/Stashbot/"] ~ .phui-timeline-group .phui-timeline-title {
+    height: 0;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+
+    visibility: hidden;
+    overflow: visible;
+    z-index: 1;
+}
+
+/* Reposition the timestamp */
+.phui-timeline-major-event a.phui-timeline-image[href="/p/Stashbot/"] ~ .phui-timeline-group .phui-timeline-title .phui-timeline-extra {
+    float: right;
+    visibility: visible;
+    padding-right: 8px;
+    margin-top: -4px;
+    margin-bottom: -2px;
+    padding-left: 8px;
+}
+
+/* Hide box background and border, and match the timeline drawing */
+.phui-timeline-major-event a.phui-timeline-image[href="/p/Stashbot/"] ~ .phui-timeline-group .phui-timeline-inner-content {
+    background: #f3f5f7;
+    color: #4B4D51;
+    border: 0;
+    margin: -1px;
+    padding: 0;
+    padding-left: 38px;
+
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWO4euPhfwAIogOOtIE7lQAAAABJRU5ErkJggg==);
+    background-repeat: repeat-y;
+    background-position: 18px;
+}
+
+.device .phui-timeline-major-event a.phui-timeline-image[href="/p/Stashbot/"] {
+    display: block;
+    left: 3px;
+}
+.device .phui-timeline-major-event a.phui-timeline-image[href="/p/Stashbot/"] ~ .phui-timeline-group .phui-timeline-inner-content {
+    background-position: 16px;
+}
+
+.phui-timeline-major-event a.phui-timeline-image[href="/p/Stashbot/"] ~ .phui-timeline-group .phui-timeline-core-content {
+    background: #f3f5f7;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: max-content;
+    max-width: 100%;
+    overflow: visible;
+}
+
+.phui-timeline-major-event a.phui-timeline-image[href="/p/Stashbot/"] ~ .phui-timeline-group .phui-timeline-core-content p {
+    margin: 0;
+}
+
+/* Hide #Patch-for-review added */
+.phui-timeline-minor-event a.phui-timeline-image[href="/p/Stashbot/"],
+.phui-timeline-minor-event a.phui-timeline-image[href="/p/Stashbot/"] ~ .phui-timeline-wedge {
+    display: none;
+}
+
+.phui-timeline-minor-event a.phui-timeline-image[href="/p/Stashbot/"] ~ .phui-timeline-group {
+    height: 0;
+    visibility: hidden;
+    pointer-events: none;
+    margin-top: -16px;
+}
