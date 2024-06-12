@@ -5,7 +5,7 @@
 // @match        https://gitlab.com/*
 // @match        https://gitlab.wikimedia.org/*
 // @match        https://gitlab.local.wmftest.net:8084/*
-// @version      20240612.01
+// @version      20240612.02
 // @author       Bryan Davis
 // @license      MiT License; http://opensource.org/licenses/MIT
 // @downloadURL  https://bd808.com/userscripts/gitlab.user.js
@@ -22,21 +22,32 @@
 	'use strict';
 	GM.getResourceText('usercss').then(function(css){GM.addStyle(css);});
 
-	// Display (most) times in UTC
-	const times = Array.from(document.getElementsByTagName('time'));
-	times.forEach(el => {
-		const dt = el.getAttribute( 'datetime' );
-		if ( dt ) {
-			el.innerHTML = (new Date( dt )).toLocaleString(
-				'sv-SE',
-				{
-					timeZone: 'UTC',
-					dateStyle: 'short',
-					timeStyle: 'short'
-				}
-			) + ' Z';
-		}
-	});
+	const utctimes = function () {
+		// Display (most) times in UTC
+		const times = Array.from(document.getElementsByTagName('time'));
+		times.forEach(el => {
+			const dt = el.getAttribute('datetime');
+			if ( dt ) {
+				el.innerHTML = (new Date(dt)).toLocaleString(
+					'sv-SE',  // Uses ISO 8601 compatible formats
+					{
+						timeZone: 'UTC',
+						dateStyle: 'short',
+						timeStyle: 'short'
+					}
+				) + ' Z';
+			}
+		});
+	};
+
+	utctimes();
+	var mutationTarget = document.querySelector('#content-body'),
+		observer = new MutationObserver(function(mutations) {
+			mutations.forEach(function(mutation) {
+				utctimes();
+			});
+		});
+	observer.observe(mutationTarget, { childList: true });
 
 	// https://gist.github.com/Gabrielcarvfer/9a89545231138797596d76a86fe85af4
 	// Create subdivision to hold buttons on the far-right of the screen
