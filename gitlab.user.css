@@ -1,0 +1,28 @@
+/*!
+ * bd808's gitlab css hacks
+ * © 2024 Bryan Davis and contributors
+ * License: http://opensource.org/licenses/MIT
+ */
+
+/**
+ * Super-sidebar hacktastic hacks. The upstream design causes feelings of 🤢.
+ */
+:root {
+    --bd808-ss-width: 14rem;
+}
+.page-with-super-sidebar .content-wrapper {
+  padding-left: var(--bd808-ss-width);
+}
+.page-with-super-sidebar .breadcrumbs {
+  padding-left: calc(var(--bd808-ss-width) - 2rem);
+}
+.page-with-super-sidebar #super-sidebar {
+    width: var(--bd808-ss-width);
+}
+
+/**
+ * Ideas:
+ * - turn .user-bar back into a horizonal page header
+ * - make .contextual-nav default to a thin vertical icon bar with some
+ *   "expand" affordance
+ */
