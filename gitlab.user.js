@@ -5,7 +5,7 @@
 // @match        https://gitlab.com/*
 // @match        https://gitlab.wikimedia.org/*
 // @match        https://gitlab.local.wmftest.net:8084/*
-// @version      20240612.00
+// @version      20240612.01
 // @author       Bryan Davis
 // @license      MiT License; http://opensource.org/licenses/MIT
 // @downloadURL  https://bd808.com/userscripts/gitlab.user.js
@@ -39,12 +39,11 @@
 	});
 
 	// https://gist.github.com/Gabrielcarvfer/9a89545231138797596d76a86fe85af4
-	const tbc = document.getElementsByClassName("top-bar-container");
 	// Create subdivision to hold buttons on the far-right of the screen
 	const rbd = document.createElement('div');
 	rbd.id = "good_old_menu";
-
 	rbd.class = "gl-display-flex gl-p-3 gl-gap-1 gl-flex-direction-column";
+
 	// Copy search bar
 	rbd.appendChild(document.getElementById('super-sidebar-search'));
 	// Copy issues button
@@ -67,44 +66,5 @@
 		rbd.children[i].style.padding = "8px";
 	}
 	// Put the top bar back to where it belong
-	tbc[0].appendChild(rbd);
-
-	var tles = document.querySelectorAll('[data-testid="static-items-section"]')[0];
-	if (tles) {
-		tles = tles.parentElement;
-		// Move useful sections to the outer list
-		var pinned_entries = [
-			"activity",
-			"files",
-			"project_issue_list",
-			"project_merge_request_list",
-			"pipelines"
-		]
-		for (i = 0; i < pinned_entries.length; i++) {
-			var entry_to_move = document.querySelectorAll('[data-track-label="'+pinned_entries[i]+'"]')[0];
-			if (entry_to_move) {
-				tles.appendChild(entry_to_move);
-			}
-		}
-	}
-	var elements_to_remove = [
-		"menu-section-button-pinned",
-		"menu-section-button-plan",
-		"menu-section-button-manage",
-		"menu-section-button-code",
-		"menu-section-button-build",
-		"menu-section-button-deploy",
-		"menu-section-button-operate",
-		"menu-section-button-monitor",
-		"menu-section-button-analyze"
-	]
-	for (i = 0; i < elements_to_remove.length; i++) {
-		var lmstr = document.getElementById(elements_to_remove[i]);
-		if (lmstr) {
-			lmstr.parentElement.innerHTML = "";
-		}
-	}
+	document.getElementsByClassName("top-bar-container")[0].appendChild(rbd);
 })();
-
-// TODO: figure out how to kill or patch super_sidebar/super_sidebar_collapsed_state_manager.js
-// Maybe just fork from https://gist.github.com/Gabrielcarvfer/9a89545231138797596d76a86fe85af4
