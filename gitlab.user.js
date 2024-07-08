@@ -5,7 +5,7 @@
 // @match        https://gitlab.com/*
 // @match        https://gitlab.wikimedia.org/*
 // @match        https://gitlab.local.wmftest.net:8084/*
-// @version      20240612.02
+// @version      20240707.01
 // @author       Bryan Davis
 // @license      MiT License; http://opensource.org/licenses/MIT
 // @downloadURL  https://bd808.com/userscripts/gitlab.user.js
@@ -60,7 +60,9 @@
 	// Copy issues button
 	rbd.appendChild(document.querySelectorAll('[data-testid="issues-shortcut-button"]')[0]);
 	// Copy merge requests button
-	rbd.appendChild(document.querySelectorAll('[data-testid="merge-requests-shortcut-button"]')[0]);
+	const mrDiv = document.querySelectorAll('[data-testid="merge-requests-shortcut-button"]')[0].parentElement.parentElement;
+	mrDiv.classList.remove("gl-display-block!")
+	rbd.appendChild(mrDiv);
 	// Copy todo button
 	rbd.appendChild(document.querySelectorAll('[data-testid="todos-shortcut-button"]')[0]);
 	// Copy + button
