@@ -1,6 +1,6 @@
 /*!
  * bd808's WMF gerrit css hacks
- * © 2022 Bryan Davis and contributors
+ * © 2024 Bryan Davis and contributors
  * License: http://opensource.org/licenses/MIT
  */
 body {
@@ -36,8 +36,15 @@ html {
 }
 /* Reduce vertical whitespace */
 .commitContainer,
-#commitMessage {
+div#commitMessage {
   margin-bottom:0;
+}
+/* Related below commmit message */
+div#commitAndRelated {
+  display: block;
+}
+div.relatedChanges {
+  padding: 0 var(--spacing-l);
 }
 /* Compact list views */
 #changeList {
