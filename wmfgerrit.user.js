@@ -4,7 +4,8 @@
 // @description  Make gerrit look and work like I want it to
 // @match        https://gerrit.wikimedia.org/*
 // @match        https://gerrit-test.wikimedia.org/*
-// @version      20241117.1
+// @match        https://review.opendev.org/*
+// @version      20250624.1
 // @author       Bryan Davis
 // @license      MIT License; http://opensource.org/licenses/MIT
 // @downloadURL  https://bd808.com/userscripts/wmfgerrit.user.js
