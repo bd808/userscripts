@@ -1,6 +1,6 @@
 /*!
  * bd808's phabricator css hacks
- * © 2016 Bryan Davis and contributors
+ * © 2025 Bryan Davis and contributors
  * License: http://opensource.org/licenses/MIT
  */
 
@@ -231,8 +231,15 @@ body.phui-workboard-color .phabricator-side-menu .phui-profile-menu-footer-1 {
  * @author https://userstyles.world/user/MatmaRex
  * @license MIT
  */
+/*
+ * bd808:
+ * - Do most of the gerritbot hacks for CodeReviewBot too.
+ * - Do most of the gerritbot hacks for Stashbot too.
+ */
 /* Turn Gerritbot's avatar into timeline icon */
-.phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] {
+.phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"],
+.phui-timeline-major-event a.phui-timeline-image[href="/p/CodeReviewBot/"],
+.phui-timeline-major-event a.phui-timeline-image[href="/p/Stashbot/"] {
     background-position: center;
     left: 5px;
     width: 26px;
@@ -243,20 +250,30 @@ body.phui-workboard-color .phabricator-side-menu .phui-profile-menu-footer-1 {
 }
 
 /* Hide the title "gerritbot added a comment" */
-.phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-wedge {
+.phui-timeline-minor-event a.phui-timeline-image[href="/p/gerritbot/"],
+.phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-wedge,
+.phui-timeline-minor-event a.phui-timeline-image[href="/p/CodeReviewBot/"],
+.phui-timeline-major-event a.phui-timeline-image[href="/p/CodeReviewBot/"] ~ .phui-timeline-wedge,
+.phui-timeline-minor-event a.phui-timeline-image[href="/p/Stashbot/"],
+.phui-timeline-major-event a.phui-timeline-image[href="/p/Stashbot/"] ~ .phui-timeline-wedge {
     display: none;
 }
 
-.phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-group .phui-timeline-menu {
-    top: 2px;
-    display: none;
+.phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-group .phui-timeline-menu,
+.phui-timeline-major-event a.phui-timeline-image[href="/p/CodeReviewBot/"] ~ .phui-timeline-group .phui-timeline-menu,
+.phui-timeline-major-event a.phui-timeline-image[href="/p/Stashbot/"] ~ .phui-timeline-group .phui-timeline-menu {
+    border-left: 0;
+    top: -5px;
 }
 
-.phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-group .phui-timeline-title {
+.phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-group .phui-timeline-title,
+.phui-timeline-major-event a.phui-timeline-image[href="/p/CodeReviewBot/"] ~ .phui-timeline-group .phui-timeline-title,
+.phui-timeline-major-event a.phui-timeline-image[href="/p/Stashbot/"] ~ .phui-timeline-group .phui-timeline-title {
     height: 0;
     min-height: 0;
     padding: 0;
     margin: 0;
+    margin-right: 2em;
 
     visibility: hidden;
     overflow: visible;
@@ -264,7 +281,9 @@ body.phui-workboard-color .phabricator-side-menu .phui-profile-menu-footer-1 {
 }
 
 /* Reposition the timestamp */
-.phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-group .phui-timeline-title .phui-timeline-extra {
+.phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-group .phui-timeline-title .phui-timeline-extra,
+.phui-timeline-major-event a.phui-timeline-image[href="/p/CodeReviewBot/"] ~ .phui-timeline-group .phui-timeline-title .phui-timeline-extra,
+.phui-timeline-major-event a.phui-timeline-image[href="/p/Stashbot/"] ~ .phui-timeline-group .phui-timeline-title .phui-timeline-extra {
     float: right;
     visibility: visible;
     padding-right: 8px;
@@ -274,7 +293,9 @@ body.phui-workboard-color .phabricator-side-menu .phui-profile-menu-footer-1 {
 }
 
 /* Hide box background and border, and match the timeline drawing */
-.phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-group .phui-timeline-inner-content {
+.phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-group .phui-timeline-inner-content,
+.phui-timeline-major-event a.phui-timeline-image[href="/p/CodeReviewBot/"] ~ .phui-timeline-group .phui-timeline-inner-content,
+.phui-timeline-major-event a.phui-timeline-image[href="/p/Stashbot/"] ~ .phui-timeline-group .phui-timeline-inner-content {
     background: #f3f5f7;
     color: #4B4D51;
     border: 0;
@@ -287,15 +308,21 @@ body.phui-workboard-color .phabricator-side-menu .phui-profile-menu-footer-1 {
     background-position: 18px;
 }
 
-.device .phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] {
+.device .phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"],
+.device .phui-timeline-major-event a.phui-timeline-image[href="/p/CodeReviewBot/"],
+.device .phui-timeline-major-event a.phui-timeline-image[href="/p/Stashbot/"] {
     display: block;
     left: 3px;
 }
-.device .phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-group .phui-timeline-inner-content {
+.device .phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-group .phui-timeline-inner-content,
+.device .phui-timeline-major-event a.phui-timeline-image[href="/p/CodeReviewBot/"] ~ .phui-timeline-group .phui-timeline-inner-content,
+.device .phui-timeline-major-event a.phui-timeline-image[href="/p/Stashbot/"] ~ .phui-timeline-group .phui-timeline-inner-content {
     background-position: 16px;
 }
 
-.phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-group .phui-timeline-core-content {
+.phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-group .phui-timeline-core-content,
+.phui-timeline-major-event a.phui-timeline-image[href="/p/CodeReviewBot/"] ~ .phui-timeline-group .phui-timeline-core-content,
+.phui-timeline-major-event a.phui-timeline-image[href="/p/Stashbot/"] ~ .phui-timeline-group .phui-timeline-core-content {
     background: #f3f5f7;
     margin: 0;
     padding: 0;
@@ -305,7 +332,9 @@ body.phui-workboard-color .phabricator-side-menu .phui-profile-menu-footer-1 {
     overflow: visible;
 }
 
-.phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-group .phui-timeline-core-content p {
+.phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-group .phui-timeline-core-content p,
+.phui-timeline-major-event a.phui-timeline-image[href="/p/CodeReviewBot/"] ~ .phui-timeline-group .phui-timeline-core-content p,
+.phui-timeline-major-event a.phui-timeline-image[href="/p/Stashbot/"] ~ .phui-timeline-group .phui-timeline-core-content p {
     margin: 0;
 }
 
@@ -334,10 +363,6 @@ body.phui-workboard-color .phabricator-side-menu .phui-profile-menu-footer-1 {
     left: 0;
     right: 0;
     bottom: 0;
-}
-
-.phui-timeline-major-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-group .phui-timeline-menu {
-    border-left: 0;
 }
 
 /* Change timeline icon (formerly avatar) colors */
@@ -381,204 +406,12 @@ body.phui-workboard-color .phabricator-side-menu .phui-profile-menu-footer-1 {
     backdrop-filter: hue-rotate(200deg); /* red */
 }
 
-/* Hide #Patch-for-review added */
-.phui-timeline-minor-event a.phui-timeline-image[href="/p/gerritbot/"],
-.phui-timeline-minor-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-wedge {
-    display: none;
-}
-
-.phui-timeline-minor-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-group {
-    height: 0;
-    visibility: hidden;
-    pointer-events: none;
-    margin-top: -16px;
-}
-/**********************************************************************/
-
-/***********************************************************************
- * Do most of the gerritbot hacks for CodeReviewBot too.
- */
-/* Turn CodeReviewBot's avatar into timeline icon */
-.phui-timeline-major-event a.phui-timeline-image[href="/p/CodeReviewBot/"] {
-    background-position: center;
-    left: 5px;
-    width: 26px;
-    height: 26px;
-    background-color: #f3f5f7;
-    top: 50%;
-    margin-top: -13px;
-}
-
-/* Hide the title "CodeReviewBot added a comment" */
-.phui-timeline-major-event a.phui-timeline-image[href="/p/CodeReviewBot/"] ~ .phui-timeline-wedge {
-    display: none;
-}
-
-.phui-timeline-major-event a.phui-timeline-image[href="/p/CodeReviewBot/"] ~ .phui-timeline-group .phui-timeline-menu {
-    top: 2px;
-    display: none;
-}
-
-.phui-timeline-major-event a.phui-timeline-image[href="/p/CodeReviewBot/"] ~ .phui-timeline-group .phui-timeline-title {
-    height: 0;
-    min-height: 0;
-    padding: 0;
-    margin: 0;
-
-    visibility: hidden;
-    overflow: visible;
-    z-index: 1;
-}
-
-/* Reposition the timestamp */
-.phui-timeline-major-event a.phui-timeline-image[href="/p/CodeReviewBot/"] ~ .phui-timeline-group .phui-timeline-title .phui-timeline-extra {
-    float: right;
-    visibility: visible;
-    padding-right: 8px;
-    margin-top: -4px;
-    margin-bottom: -2px;
-    padding-left: 8px;
-}
-
-/* Hide box background and border, and match the timeline drawing */
-.phui-timeline-major-event a.phui-timeline-image[href="/p/CodeReviewBot/"] ~ .phui-timeline-group .phui-timeline-inner-content {
-    background: #f3f5f7;
-    color: #4B4D51;
-    border: 0;
-    margin: -1px;
-    padding: 0;
-    padding-left: 38px;
-
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWO4euPhfwAIogOOtIE7lQAAAABJRU5ErkJggg==);
-    background-repeat: repeat-y;
-    background-position: 18px;
-}
-
-.device .phui-timeline-major-event a.phui-timeline-image[href="/p/CodeReviewBot/"] {
-    display: block;
-    left: 3px;
-}
-.device .phui-timeline-major-event a.phui-timeline-image[href="/p/CodeReviewBot/"] ~ .phui-timeline-group .phui-timeline-inner-content {
-    background-position: 16px;
-}
-
-.phui-timeline-major-event a.phui-timeline-image[href="/p/CodeReviewBot/"] ~ .phui-timeline-group .phui-timeline-core-content {
-    background: #f3f5f7;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    width: max-content;
-    max-width: 100%;
-    overflow: visible;
-}
-
-.phui-timeline-major-event a.phui-timeline-image[href="/p/CodeReviewBot/"] ~ .phui-timeline-group .phui-timeline-core-content p {
-    margin: 0;
-}
-
-/* Hide #Patch-for-review added */
-.phui-timeline-minor-event a.phui-timeline-image[href="/p/CodeReviewBot/"],
-.phui-timeline-minor-event a.phui-timeline-image[href="/p/CodeReviewBot/"] ~ .phui-timeline-wedge {
-    display: none;
-}
-
-.phui-timeline-minor-event a.phui-timeline-image[href="/p/CodeReviewBot/"] ~ .phui-timeline-group {
-    height: 0;
-    visibility: hidden;
-    pointer-events: none;
-    margin-top: -16px;
-}
-
-/***********************************************************************
- * Do most of the gerritbot hacks for Stashbot too.
- */
-/* Turn Stashbot's avatar into timeline icon */
-.phui-timeline-major-event a.phui-timeline-image[href="/p/Stashbot/"] {
-    background-position: center;
-    left: 5px;
-    width: 26px;
-    height: 26px;
-    background-color: #f3f5f7;
-    top: 50%;
-    margin-top: -13px;
-}
-
-/* Hide the title "Stashbot added a comment" */
-.phui-timeline-major-event a.phui-timeline-image[href="/p/Stashbot/"] ~ .phui-timeline-wedge {
-    display: none;
-}
-
-.phui-timeline-major-event a.phui-timeline-image[href="/p/Stashbot/"] ~ .phui-timeline-group .phui-timeline-menu {
-    top: 2px;
-    display: none;
-}
-
-.phui-timeline-major-event a.phui-timeline-image[href="/p/Stashbot/"] ~ .phui-timeline-group .phui-timeline-title {
-    height: 0;
-    min-height: 0;
-    padding: 0;
-    margin: 0;
-
-    visibility: hidden;
-    overflow: visible;
-    z-index: 1;
-}
-
-/* Reposition the timestamp */
-.phui-timeline-major-event a.phui-timeline-image[href="/p/Stashbot/"] ~ .phui-timeline-group .phui-timeline-title .phui-timeline-extra {
-    float: right;
-    visibility: visible;
-    padding-right: 8px;
-    margin-top: -4px;
-    margin-bottom: -2px;
-    padding-left: 8px;
-}
-
-/* Hide box background and border, and match the timeline drawing */
-.phui-timeline-major-event a.phui-timeline-image[href="/p/Stashbot/"] ~ .phui-timeline-group .phui-timeline-inner-content {
-    background: #f3f5f7;
-    color: #4B4D51;
-    border: 0;
-    margin: -1px;
-    padding: 0;
-    padding-left: 38px;
-
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWO4euPhfwAIogOOtIE7lQAAAABJRU5ErkJggg==);
-    background-repeat: repeat-y;
-    background-position: 18px;
-}
-
-.device .phui-timeline-major-event a.phui-timeline-image[href="/p/Stashbot/"] {
-    display: block;
-    left: 3px;
-}
-.device .phui-timeline-major-event a.phui-timeline-image[href="/p/Stashbot/"] ~ .phui-timeline-group .phui-timeline-inner-content {
-    background-position: 16px;
-}
-
-.phui-timeline-major-event a.phui-timeline-image[href="/p/Stashbot/"] ~ .phui-timeline-group .phui-timeline-core-content {
-    background: #f3f5f7;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    width: max-content;
-    max-width: 100%;
-    overflow: visible;
-}
-
-.phui-timeline-major-event a.phui-timeline-image[href="/p/Stashbot/"] ~ .phui-timeline-group .phui-timeline-core-content p {
-    margin: 0;
-}
-
-/* Hide #Patch-for-review added */
-.phui-timeline-minor-event a.phui-timeline-image[href="/p/Stashbot/"],
-.phui-timeline-minor-event a.phui-timeline-image[href="/p/Stashbot/"] ~ .phui-timeline-wedge {
-    display: none;
-}
-
+.phui-timeline-minor-event a.phui-timeline-image[href="/p/gerritbot/"] ~ .phui-timeline-group,
+.phui-timeline-minor-event a.phui-timeline-image[href="/p/CodeReviewBot/"] ~ .phui-timeline-group,
 .phui-timeline-minor-event a.phui-timeline-image[href="/p/Stashbot/"] ~ .phui-timeline-group {
     height: 0;
     visibility: hidden;
     pointer-events: none;
     margin-top: -16px;
 }
+/**********************************************************************/
