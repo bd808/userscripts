@@ -1,6 +1,6 @@
 /*!
  * bd808's gmail css hacks
- * © 2018 Bryan Davis and contributors
+ * © 2025 Bryan Davis and contributors
  * License: http://opensource.org/licenses/MIT
  */
 
@@ -58,4 +58,9 @@ html body .zA > .a4W { letter-spacing: inherit; }
 .ah9 > .CJ,
 .n3 > .CL > .CK {
     font-size:12px;
+}
+
+/* (reply) (reply all) (forward) button bar */
+.btDi4d {
+    position:static;
 }
