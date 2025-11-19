@@ -3,7 +3,7 @@
 // @namespace    http://bd808.com/userscripts/
 // @description  Make gmail look and work like I want it to
 // @match        https://mail.google.com/*
-// @version      20251110.01
+// @version      20251119.01
 // @author       Bryan Davis
 // @license      MIT License; http://opensource.org/licenses/MIT
 // @downloadURL  https://bd808.com/userscripts/gmail.user.js

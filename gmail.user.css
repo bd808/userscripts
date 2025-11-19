@@ -62,5 +62,5 @@ html body .zA > .a4W { letter-spacing: inherit; }
 
 /* (reply) (reply all) (forward) button bar */
 .btDi4d {
-    position:static;
+    position:static !important;
 }
