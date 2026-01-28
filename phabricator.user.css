@@ -225,6 +225,19 @@ body.phui-workboard-color .phabricator-side-menu .phui-profile-menu-footer-1 {
     border-color:red;
 }
 
+/* Undo ellipsis overflow and hover expand that got added to WMF deploy. */
+div.phui-timeline-major-event a.phui-timeline-image[href="/p/Stashbot/"] ~ .phui-timeline-group .phabricator-remarkup {
+    display: block;
+    clip-path: none;
+    transition-property: none;
+}
+div.phui-timeline-major-event a.phui-timeline-image[href="/p/Stashbot/"] ~ .phui-timeline-group .phabricator-remarkup p {
+    min-width: inherit;
+    overflow: auto;
+    transition-property: none;
+    white-space: normal;
+}
+
 /***********************************************************************
  * Reduce Gerritbot comments.
  * <https://userstyles.world/style/13140/wikimedia-phabricator-reduce-gerritbot-comments>
