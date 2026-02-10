@@ -263,4 +263,11 @@ div.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-star {
   right:15px;
 }
 
-/* vim:sw=2:ts=2:sts=2:et: */
+/* Borrowed from https://github.com/quiddity-wp/wikimedia-style-tweaks/blob/master/gerrit.user.css
+ */
+/* give known bots low opacity when looking at gitiles commit logs */
+.CommitLog-item:has(.CommitLog-author[title="jenkins-bot@gerrit.wikimedia.org"]),
+.CommitLog-item:has(.CommitLog-author[title="l10n-bot@translatewiki.net"]),
+.CommitLog-item:has(.CommitLog-author[title="tools.libraryupgrader@tools.wmflabs.org"]) {
+  opacity: 0.2;
+}

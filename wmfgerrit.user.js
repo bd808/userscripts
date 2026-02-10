@@ -5,7 +5,7 @@
 // @match        https://gerrit.wikimedia.org/*
 // @match        https://gerrit-test.wikimedia.org/*
 // @match        https://review.opendev.org/*
-// @version      20250624.1
+// @version      20260210.1
 // @author       Bryan Davis
 // @license      MIT License; http://opensource.org/licenses/MIT
 // @downloadURL  https://bd808.com/userscripts/wmfgerrit.user.js
