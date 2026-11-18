@@ -238,6 +238,12 @@ div.phui-timeline-major-event a.phui-timeline-image[href="/p/Stashbot/"] ~ .phui
     white-space: normal;
 }
 
+/* Make all code blocks act like the author added `lines=10` */
+div.remarkup-code-block pre.remarkup-code {
+    max-height: 20em;
+    overflow: auto;
+}
+
 /***********************************************************************
  * Reduce Gerritbot comments.
  * <https://userstyles.world/style/13140/wikimedia-phabricator-reduce-gerritbot-comments>
